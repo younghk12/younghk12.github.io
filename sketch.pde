@@ -154,7 +154,7 @@ void drawGrit(int x, int y, float areaX, float areaY, int detail, float cSize){
       int posX = j * sizeW + (sizeH / 2);
       int smartNum = intArray[i][j];
       boolean optimist = boolArray[i][j];
-      color fill = numToColor(smartNum, optimist);
+      color fillColor = numToColor(smartNum, optimist);
       if( checkMouse(x + posX - padding, x + posX + padding, y + posY - padding, y + posY + padding) == true ){
         hover = true;
         show = smartNum;
@@ -164,11 +164,11 @@ void drawGrit(int x, int y, float areaX, float areaY, int detail, float cSize){
       else
       
       if (show == 6){
-        fill(fill);
+        fill(fillColor);
         rect(x + posX, y + posY, cSize, cSize);
       }
       if (smartNum == show){
-         fill(fill);
+         fill(fillColor);
          rect(x + posX, y + posY, cSize, cSize);
       }
       
@@ -187,7 +187,7 @@ void drawGrit(int x, int y, float areaX, float areaY, int detail, float cSize){
   /**
   boolean show = inGroup(counter, smartNum);
         if(show){
-          fill(fill);
+          fill(fillColor);
           rect(x + posX, y + posY, cSize, cSize);
         }
         **/
