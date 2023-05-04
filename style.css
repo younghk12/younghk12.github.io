@@ -9,8 +9,9 @@ body {
 }
 .container {
   width: 80vmax;
-  position: relative;
-  transform: translateX(-50%);
+  position: absolute;
+  margin-left: auto;
+  margin-right:auto;
   left: 50%;
   top: 100px;
   background-color: #ffffff;
@@ -70,4 +71,16 @@ h3 {
 .tabs .active {
   background-color: #ffffff;
   color: #000000;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px; /* desired height for images */
+}
+
+.image-container img {
+  width: calc(100% / 3); /* each image takes up 33.33% of the container width */
+  max-height: 100%; /* ensure all images have the same height */
+  object-fit: cover; /* ensure all images fill their respective containers */
 }
