@@ -23,7 +23,7 @@ body {
 #theCanvas {
   position: relative;
   left: 0;
-  transform: translateX(75%);
+  transform: translateX(100%);
   width: 500px;
   margin: auto;
   border: 5px solid black;
@@ -79,8 +79,8 @@ h3 {
   height: 300px; /* desired height for images */
 }
 
-.image-container img {
-  width: calc(100% / 3); /* each image takes up 33.33% of the container width */
-  max-height: 100%; /* ensure all images have the same height */
-  object-fit: cover; /* ensure all images fill their respective containers */
+.box {
+    width: 50%;
+    height: 100px;
+    background-color: #ccc;
 }
