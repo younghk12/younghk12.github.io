@@ -8,7 +8,7 @@ body {
   background-color: #b7b7b8;
 }
 .container {
-  width: 80vmax;
+  width: 80%;
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
