@@ -21,10 +21,11 @@ body {
   height: 450px;
 }
 #theCanvas {
+  position: relative;
+  left: 0;
   width: 500px;
   margin: auto;
   border: 5px solid black;
-  display: block;
 }
 
 #aCanvas {
