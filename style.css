@@ -73,9 +73,14 @@ h3 {
   color: #000000;
 }
 
+.image-container {
+  display: flex;
+  height: 300px; /* desired height for images */
+}
+
 .box {
     width: 50%;
-    height: 100px;
+    height: auto;
     background-color: #ccc;
 }
 
