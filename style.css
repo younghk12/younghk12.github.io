@@ -23,7 +23,7 @@ body {
 #theCanvas {
   position: relative;
   left: 0;
-  transform: translateX(50%);
+  transform: translateX(75%);
   width: 500px;
   margin: auto;
   border: 5px solid black;
