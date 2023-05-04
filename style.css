@@ -9,11 +9,8 @@ body {
 }
 .container {
   width: 80vmax;
-  position: absolute;
-  margin-left: auto;
-  margin-right:auto;
-  left: 50%;
-  top: 100px;
+  position: relative;
+  margin: 100px auto 0;
   background-color: #ffffff;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
