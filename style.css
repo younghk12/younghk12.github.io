@@ -36,8 +36,9 @@ body {
 
 .tabs {
   display: grid;
-  grid-template-columns: 100px repeat(5, 1fr);
+  grid-template-columns: 100px repeat(6, 1fr);
 }
+
 h3 {
   color: #ffffff;
   background-color: #7c7f88;
@@ -77,6 +78,13 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   height: 300px; /* desired height for images */
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .box {
