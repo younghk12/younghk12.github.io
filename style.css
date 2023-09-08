@@ -82,12 +82,7 @@ h3 {
   height: 300px; /* desired height for images */
 }
 
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
+
 
 .box {
     width: 50%;
