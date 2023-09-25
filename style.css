@@ -20,6 +20,9 @@ body {
   width: 100%;
   height: 450px;
 }
+img{
+  max-width: 100%;
+}
 #theCanvas {
   position: relative;
   left: 0;
@@ -96,19 +99,21 @@ h3 {
   min-height: 100vh;
 }
 
-.container2 {
-  display: flex;
+.textImageContainer {
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
-img {
-  max-width: 100%;
-  max-height:100%;
+.image2 {
+  max-width: 25%;
+  max-height:15%;
+  float: left;
 }
 
-.text {
+.text2 {
   font-size: 20px;
   padding-left: 20px;
+  padding-top: 20%;
+  float: left;
 }
 
