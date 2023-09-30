@@ -27,7 +27,7 @@
   .tabs__sidebar {
   width: 100%;
   display: grid;
-  grid-template-columns: auto repeat(3, 1fr);
+  grid-template-columns: auto repeat(5, 1fr);
   }
   .tabs__button {
   color: #ffffff;
@@ -117,6 +117,8 @@ h4{
     <div class="tabs">
       <div class="tabs__sidebar">
         <button class="tabs__button tabs__button--active" data-for-tab="1">Bio</button>
+        <button class="tabs__button" data-for-tab="2">Thesis</button>
+        <button class="tabs__button" data-for-tab="3">Manifesto</button>
         <button class="tabs__button" data-for-tab="4">Abstraction</button>
         <button class="tabs__button" data-for-tab="5">Technology</button>
         <button class="tabs__button" data-for-tab="6">Culture</button>
@@ -133,15 +135,30 @@ h4{
             <h4>Henry K. Young</h4>
             <br>
             <div>
-              <p> is a designer and new media artist based Portland, Oregon. He recently graduated from Whitman College majoring in Theory and Practice in Digital Design. The individually planned major
-                combined new media art, computer science, and art history with a focus on modern art and architecture. The experimental major served as an unofficial model for the Human 
-                Centered Design major introduced the next year. Henry realized he was interested in design in highschool after taking 
-                a summer course at Sci-Arc. He uses processing, figma, and various coding languages to create interactive interfaces, reflecting his Brutalist inspired style. He is 
+              <p> is 22 years old from Portland, Oregon. He recently graduated from Whitman College majoring in Theory and Practice in Digital Design. The individually planned major
+                combines new media art, computer science, and art history with a focus on modern art and architecture. He realized he was interested in design in highschool after taking 
+                a summer course at Sci-Arc. Henry uses processing, figma, and various coding languages to create interactive interfaces, reflecting his Brutalist inspired style. He is 
                 familiar with python, C++, java, and html/javascript. Henry hopes to explore a career in User Experience Design or Architecture. </p>
             </div>
 
       </div>
 
+<!--PAGE 2-->
+      <div class="tabs__content" data-tab="2">
+
+          <p>
+            <iframe id="myiframe" style="height:700px" src="files/IPM Adaptive Reuse of Brutalism (1).pdf" ></iframe>
+          </p>
+
+      </div>
+
+<!--PAGE 3-->
+      <div class="tabs__content" data-tab="3">
+
+          <p>
+            <iframe id="myiframe" style="height:700px" src="files/Manifesto.pdf"></iframe>
+          </p>
+      </div>
 
 <!--PAGE 4-->
       <div class="tabs__content" data-tab="4">
@@ -183,6 +200,8 @@ h4{
             </p>
           <!--<canvas id="theCanvas" data-processing-sources="files/processing/R_ANal_oGrit.pde"></canvas>
           <canvas id="theCanvas" data-processing-sources="files/newMediaFinal/newMediaFinal.pde"></canvas>-->
+      
+        
       </div>
 
 <!--PAGE 5-->
@@ -255,6 +274,9 @@ h4{
 
           <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FJLwIHJB0jmjx4u0k0kKQKv%2FRe-Design%3Fpage-id%3D4%253A75%26type%3Ddesign%26node-id%3D4-76%26viewport%3D198%252C390%252C1.39%26scaling%3Dscale-down%26starting-point-node-id%3D4%253A95" allowfullscreen></iframe>
           
+
+
+
         <p >
           Another assignment in my Human Computer Interaction course, we worked in groups to redesign an existing website and make it compatible for three different screen sizes: the apple watch, the laptop, and the multi touch display. I chose to tackle the large multi touch display because it is an unconventional and less widely used screen format. It seemed like a wonderful design challenge to speculate and predict how something like this might be used, and how best to layout an interface for it. Using the example of the Microsoft surface hub, I saw that the screen is split into four parts, which was a useful limitation.
           <br><br>
@@ -270,18 +292,6 @@ h4{
         </p>
 
       </p>
-
-
-
-    </p>
-    <a  href="">Music Event App</a>
-        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="75%" height="650" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fdx8Befd4n8e9PUrEdMOnYz%2FportlandPop%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DJtOXc2jXw3E0tHoa-1" allowfullscreen></iframe>
-        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="24%" height="650" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fdx8Befd4n8e9PUrEdMOnYz%2FportlandPop%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D125-339%26viewport%3D535%252C371%252C0.4%26t%3DL5udpfsunSYd5BZm-1%26scaling%3Dscale-down%26starting-point-node-id%3D125%253A339%26mode%3Ddesign" allowfullscreen></iframe>
-    <p >
-      <p >
-        I am currently taking Daniel Scott’s Advanced Figma course, pushing my figma knowledge and strengthening my hard skills. I am working on a prototype for a music event app called Portland Pop, generated by Daniel’s random prompt generator. These skill driven courses serve to supplement the conceptually focussed liberal arts education I got at Whitman. In my most extensive Figma project to date, I am learning how to make robust, flexible components and more elegant prototypes with variants and properties, infinitely expanding the possibilities of my prototypes and reducing the time it takes for me to develop them. 
-      </p>
-
       
         
         
@@ -330,7 +340,7 @@ h4{
           <p >
             For this assignment of my Human Computer Interaction course, we were tasked with making an data visualization that appeals to the senses.  I decided to look at the correlation between knowledge of the past and optimism about the future. After learning about Nirvana and Grunge in one of my other classes, I became really interested in generational attitudes, especially regarding optimism and apathy. The first study included only the percentage of each level of knowledge that were optimistic about the fate of the world. To get a more accurate picture of the data, I wanted to see what proportion of people were in each level of knowledge, so I did some research and found the original study. The data is presented above.
             <br><br>
-            For my sketch, I wrote a program in processing that draws a grid representing the data. I used the same color scale they used to represent little knowledge through very knowledgeable, red through green respectively. The lighter colors in the data represent the optimistic members of that group while the more muted ones represent the more pessimistic ones. I made the grid respond to mouse position, so that when you move the mouse from left to right the sample size grows so that you have the choice of seeing small or large sample sizes. I made it so that proportions in the data would determine the drawing, meaning you could adjust the sample size or the size of the grid and the numbers would change accordingly. I personally find that sample size can affect my perception of the proportions, and maybe having dynamic data would provide a more thorough understanding of that data. I also made it so that you could hover over the specific category of knowledge level and it would isolate that group so you could see the proportion of optimists to pessimists on their own. While I don't necessarily agree with the data, it suggests that people with more knowledge of world events and the past are more optimistic about the future of the world than those with less knowledge. I think this representation appeals to our senses and emotions because it encourages a certain level of playfulness and experimentation within the interaction. The ability to affect the way the data is presented gives the user more flexibility and customization, allowing them to see the data in a way that is most understandable to them.
+            For my sketch, I wrote a program in processing that draws a grid representing the data. I used the same color scale they used to represent little knowledge through very knowledgeable, red through green respectively. The lighter colors in the data represent the optimistic members of that group while the more muted ones represent the more pessimistic ones. I made the grid respond to mouse position, so that when you move the mouse from left to right the sample size grows so that you have the choice of seeing small or large sample sizes. I made it so that proportions in the data would determine the drawing, meaning you could adjust the sample size or the size of the grid and the numbers would change accordingly. I personally find that sample size can affect my perception of the proportions, and maybe having dynamic data would provide a more thorough understanding of that data. I also made it so that you could hover over the specific category of knowledge level and it would isolate that group so you could see the proportion of optimists to pessimists on their own. While I don't necessarily agree with the data, it suggests that people with more knowledge of world events and the past are more optimistic about the future of the world than those with less knowledge. I think this representation appeals to our senses and emotions because it encourages a certain level of playfulness and experimentation within in the interaction. The ability to affect the way the data is presented gives the user more flexibility and customization, allowing them to see the data in a way that is most understandable to them.
           </p>
       </div>
     </div>
