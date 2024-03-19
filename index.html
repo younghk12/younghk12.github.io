@@ -8,71 +8,151 @@
     <link rel="stylesheet" href="cssReset.css">
     <!-- Styling for the site -->
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="logo">
-                <a href="#">
-                    <img src="files/Vector.svg" style="width: 80px; height: auto;" alt="">
-                </a>
-            </div>
+        <header class="headerNoBio" id="expandable">
+
             <nav>
-                <a href="#">
-                    <div class="navButton">
-                        Sort
+                <div class="logo" onclick="toggleBio()">
+                    <a href="#" >
+                        <img src="files/Vector.svg" style="width: 100px; height: auto;" alt="">
+                    </a>
+                </div>
+                
+                    <div class="navRight">
+                        <a href="#" onclick="toggleBio()">
+                            <h3 class="navButton">
+                                Bio
+                            </h3>
+                        </a>
+                        <a href="software.html">
+                            <h3 class="navButton">
+                                Software
+                            </h3>
+                        </a>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="navButton">
-                        Contact
-                    </div>
-                </a>
             </nav>
+            
+            <div class="bio" >
+                <img src="files/headShot.jpg" style="float: left; width: 100px; margin: 0px 20px 5px 0px; margin-top: -11px;" alt="">
+                <p>is a designer and new media artist based in Portland, Oregon. He recently graduated from Whitman College majoring in Theory and Practice in Digital Design. The individually planned major combined new media art, computer science, and art history with a focus on modern art and architecture. The experimental major served as an unofficial model for the Human Centered Design major introduced the next year. Henry realized he was interested in design in highschool after taking a summer course at Sci-Arc. He uses processing, figma, and various coding languages to create interactive interfaces, reflecting his Brutalist inspired style. He is familiar with python, C++, java, and html/javascript. Henry hopes to explore a career in User Experience Design or Architecture.</p>
+            </div>
         </header>
         <main>
-            <h1>Main</h1>
-            <div class="project">
-                <h2>Album Cover</h2>
-                <div class="imgRow">
-                    <div style="flex: calc(2000/1297)">
-                        <img src='files/kupka_untitled1928.jpeg'>
+            <div class="mainNav">
+                <a class="mainButton selected" href="index.html">
+                    <h3>
+                        Abstraction
+                    </h3>
+                </a>
+                <a class="mainButton unselected" href="technology.html">
+                    <h3>
+                        Technology
+                    </h3>
+                </a>
+                <a class="mainButton unselected" href="culture.html">
+                    <h3>
+                        Culture
+                    </h3>
+                </a>
+            </div>
+
+
+
+
+
+
+            <div class="projects">
+                <div class="project">
+
+                    <div class="projectTitle">
+                        <h1>Album Cover</h1>
+                        <div class="softwareBox">
+                            <h3>Figma</h3>
+                        </div>
                     </div>
-                    <div style="flex: calc(667/600)">
-                        <img src='files/kupka_music1936.jpg'>
+                    <div class="inspiration">
+                        <h2>Inspiration</h2>
+                        <div class="imgRow">
+                            <div style="flex: calc(2000/1297)">
+                                <img src='files/kupka_untitled1928.jpeg'>
+                            </div>
+                            <div style="flex: calc(667/600)">
+                                <img src='files/kupka_music1936.jpg'>
+                            </div>
+                            <div style="flex: 1" >
+                                  <img src='files/daptoneTheFrightnrs.jpeg'>
+                            </div>
+                        </div>
                     </div>
-                    <div style="flex: 1" >
-                          <img src='files/daptoneTheFrightnrs.jpeg'>
+                    <p>While taking a class on Modernism in Art and Architecture, I decided to dedicate my album cover project to the same concepts we were learning about abstraction in modern art. After analyzing the work Untitled 1928 by Frantisek Kupka, I wanted to explore the motif of circular forms derived from vinyl and CDs. Similar to the way BMW’s logo represents the moving propeller of a plane, Kupka’s untitled piece is an exploration of movement in analog machine-like shapes such as the record player. Through parallel lines and forms seemingly rotating around focal point points, Kupka evokes the same feelings that music does. I used the Frightnrs Daptone album as a starting point, both because it already had the circular form I was looking for and because I loved the stark black and white design with the simple three dimensional typeface. In my redesign for the album cover, I experimented with essential forms like the square and rectangle as well as typography to achieve a prototype for an album cover that expressed the same emotional responses that was achieved by the artists of abstraction. Ultimately, though, this project taught me a valuable lesson. After all of my hyperfixation on form and abstraction, the most impactful feature of my project to the rest of my class was the animation of the vinyl coming out of the sleeve which had taken less than 5 minutes to do. </p>
+                    <div class="product"><iframe class="myiframe" style="border: 1px solid rgba(0, 0, 0, 0.1);"  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3ehM4uuSmV6H6hKIO1luNl%2FFigma-Final%3Ftype%3Ddesign%26t%3DY5rh2HeWOOCphcWw-1" allowfullscreen></iframe></div>
+                </div>
+
+
+
+                <div class="project">
+                    <div class="projectTitle">
+                        <h1>Design System + Processing Final</h1>
+                        <div class="softwareBox">
+                            <h3>Figma</h3>
+                        </div>
+                    </div>
+                    <p>In my final project in my digital productions course, I wanted to formalize and document a process I had already been implementing in my work. In one of our previous exercises we worked with various creative techniques from the Studio Size website based on the Luke Sullivan’s book ‘Hey, Whipple, Squeeze This.’ I found myself drawn to techniques such as abstract, exaggerate, and reduce. Using these techniques on typefaces, and more specifically the stroke on typefaces became a trademark of my personal style. In a world of endless content, I think more unique solutions will be found through pushing our design tools to their limits or using them in ways they were never meant to be used. Truly mastering a tool such as Figma should not be measured by your knowledge of its capabilities, but also by your knowledge of its limitations and your ability to push those limitations. An extension of this project would be to animate this process, but as of now Figma cannot smart animate stroke weight. This is one of the reasons I moved towards processing, because I want my imagination to be my only limitation, and because I want a more fundamental understanding of digital tools to strengthen myself as a designer. The value of a design system lies in its flexibility, and my design system can be performed on any shape or typeface. I have an appreciation for many different styles of type, and this process creates unity between highly disparate typefaces. In brutalist fashion, this process of expanding the stroke and turning it into its own form makes use of the typeface’s qualities as a vector, composed of anchor points and bezier curves. In Brutalist architecture, the core argument is not that pretty things are inherently bad, but that pretty things are used to lie. The rounded corners and bright colors that apple and google popularized have been used to hide a consumer enterprise using child labor and selling personal information. Similar to brutalist design and anti design, my design system abstracts the anchor points of the typeface to create something bold and disruptive, while revealing its true nature. My processing final is also an extension of these ideas, grappling with the dichotomy between beautiful lies and ugly truths within the world of UX and web design, human instabilities and contradictions manifested within apps and websites.</p>
+                    <div class="product">
+                        <iframe class="myiframe" style="border: 1px solid rgba(0, 0, 0, 0.1);"
+                            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FksoHi9iAZo4TFX6hGh9Yz5%2FDesign-System-Final%3Ftype%3Ddesign%26t%3DY5rh2HeWOOCphcWw-1"
+                            allowfullscreen></iframe>
+                        <iframe src="https://openprocessing.org/sketch/2013256/embed/" width=100% height="600"></iframe>
                     </div>
                 </div>
-                <iframe class="myiframe" style="border: 1px solid rgba(0, 0, 0, 0.1);"  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3ehM4uuSmV6H6hKIO1luNl%2FFigma-Final%3Ftype%3Ddesign%26t%3DY5rh2HeWOOCphcWw-1" allowfullscreen></iframe>
-                <p>While taking a class on Modernism in Art and Architecture, I decided to dedicate my album cover project to the same concepts we were learning about abstraction in modern art. After analyzing the work Untitled 1928 by Frantisek Kupka, I wanted to explore the motif of circular forms derived from vinyl and CDs. Similar to the way BMW’s logo represents the moving propeller of a plane, Kupka’s untitled piece is an exploration of movement in analog machine-like shapes such as the record player. Through parallel lines and forms seemingly rotating around focal point points, Kupka evokes the same feelings that music does. I used the Frightnrs Daptone album as a starting point, both because it already had the circular form I was looking for and because I loved the stark black and white design with the simple three dimensional typeface. In my redesign for the album cover, I experimented with essential forms like the square and rectangle as well as typography to achieve a prototype for an album cover that expressed the same emotional responses that was achieved by the artists of abstraction. Ultimately, though, this project taught me a valuable lesson. After all of my hyperfixation on form and abstraction, the most impactful feature of my project to the rest of my class was the animation of the vinyl coming out of the sleeve which had taken less than 5 minutes to do. </p>
-            </div>
+                <div class="project">
+                    <div class="projectTitle">
+                        <h1>Random Grit + Colorful Grid</h1>
+                        <div class="softwareBox">
+                            <h3>Figma</h3>
+                        </div>
+                    </div>
+                    <p>As I discussed in my manifesto, much of my work contemplates the idea of pattern. These two processing sketches particularly exhibit these concepts. The first, random grit, was adapted from Tim Rodenbroker’s exercise to mimic the dirt and grime on old film. My approach was to first make a sketch that would draw random shapes, combinations of straight lines and bezier curves, within the allotted dimensions. The result of this stepping stone, to me at least, ended up being more meaningful than the end goal of the exercise. The program endlessly creates diverse randomized shapes, and the pattern that forms is more impactful than any one random shape. The sequence turns rigid, static shapes into a turbulent yet quasi-organic movement. The impermanence of the shapes forces you to see design not as a single, tangible object, but instead a set of rules or a design system with an infinite output. Only by watching the sequence can you start to understand the rules that govern the pattern.
+                    <br><br>
+                    The second sketch takes a slightly different approach. This colorful grid is a project I have spent many iterations improving with the goal of experimenting and refining. Through this project I have experimented with data structures, color, and interactions, all confined within a grid. While making a grid is not the most difficult or original undertaking within creative coding, the grid is significant because to me it represents a foundation to build from while creating a sense of the infinite. In combination with the mouse interaction which controls the size of the grid, it brings a new dimension to this concept of scale and the sublime. The grid itself isn’t visually stunning, but it allows the smaller details to shine. I intentionally saved the color information in a data structure so that it could be updated independently from the interaction with the mouse position. In other words the interaction remains smooth and fluid, while the changes in color are choppy like archaic/rudimentary technology.
+                    <br><br>
+                    Similar to the principles of Gestalt psychology, in both of my sketches there is an emphasis on the relationship between parts and the whole. The whole is greater than the sum of its parts, whether the ‘whole’ is the sequence that forms, or the visual combined with an interaction. In both sketches I also experiment with the aesthetics and tropes of old digital media. I think it is important to reflect on the course technology has taken over time, and to be more critical about what we really want out of it.
+                    </p>
+                    <div class="product">
+                        <iframe src="https://openprocessing.org/sketch/2013427/embed/" width="100%" height="600"></iframe>
+                        <iframe src="https://openprocessing.org/sketch/2013457/embed/" width="100%" height="600"></iframe>
+                    </div>
+                
+                </div>
 
-            <div class="project">
-                <h2>Design System + Processing Final</h2>
-                <iframe class="myiframe" style="border: 1px solid rgba(0, 0, 0, 0.1);"
-                    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FksoHi9iAZo4TFX6hGh9Yz5%2FDesign-System-Final%3Ftype%3Ddesign%26t%3DY5rh2HeWOOCphcWw-1"
-                    allowfullscreen></iframe>
-                <iframe src="https://openprocessing.org/sketch/2013256/embed/" width=100% height="600"></iframe><p>In my final project in my digital productions course, I wanted to formalize and document a process I had already been implementing in my work. In one of our previous exercises we worked with various creative techniques from the Studio Size website based on the Luke Sullivan’s book ‘Hey, Whipple, Squeeze This.’ I found myself drawn to techniques such as abstract, exaggerate, and reduce. Using these techniques on typefaces, and more specifically the stroke on typefaces became a trademark of my personal style. In a world of endless content, I think more unique solutions will be found through pushing our design tools to their limits or using them in ways they were never meant to be used. Truly mastering a tool such as Figma should not be measured by your knowledge of its capabilities, but also by your knowledge of its limitations and your ability to push those limitations. An extension of this project would be to animate this process, but as of now Figma cannot smart animate stroke weight. This is one of the reasons I moved towards processing, because I want my imagination to be my only limitation, and because I want a more fundamental understanding of digital tools to strengthen myself as a designer. The value of a design system lies in its flexibility, and my design system can be performed on any shape or typeface. I have an appreciation for many different styles of type, and this process creates unity between highly disparate typefaces. In brutalist fashion, this process of expanding the stroke and turning it into its own form makes use of the typeface’s qualities as a vector, composed of anchor points and bezier curves. In Brutalist architecture, the core argument is not that pretty things are inherently bad, but that pretty things are used to lie. The rounded corners and bright colors that apple and google popularized have been used to hide a consumer enterprise using child labor and selling personal information. Similar to brutalist design and anti design, my design system abstracts the anchor points of the typeface to create something bold and disruptive, while revealing its true nature. My processing final is also an extension of these ideas, grappling with the dichotomy between beautiful lies and ugly truths within the world of UX and web design, human instabilities and contradictions manifested within apps and websites.</p>
-            </div>
-
-            <div class="project">
-                <h2>Random Grit + Colorful Grid</h2>
-                <iframe src="https://openprocessing.org/sketch/2013427/embed/" width="100%" height="600"></iframe>
-            <iframe src="https://openprocessing.org/sketch/2013457/embed/" width="100%" height="600"></iframe>
-            <p>As I discussed in my manifesto, much of my work contemplates the idea of pattern. These two processing sketches particularly exhibit these concepts. The first, random grit, was adapted from Tim Rodenbroker’s exercise to mimic the dirt and grime on old film. My approach was to first make a sketch that would draw random shapes, combinations of straight lines and bezier curves, within the allotted dimensions. The result of this stepping stone, to me at least, ended up being more meaningful than the end goal of the exercise. The program endlessly creates diverse randomized shapes, and the pattern that forms is more impactful than any one random shape. The sequence turns rigid, static shapes into a turbulent yet quasi-organic movement. The impermanence of the shapes forces you to see design not as a single, tangible object, but instead a set of rules or a design system with an infinite output. Only by watching the sequence can you start to understand the rules that govern the pattern. 
-              <br><br>
-              The second sketch takes a slightly different approach. This colorful grid is a project I have spent many iterations improving with the goal of experimenting and refining. Through this project I have experimented with data structures, color, and interactions, all confined within a grid. While making a grid is not the most difficult or original undertaking within creative coding, the grid is significant because to me it represents a foundation to build from while creating a sense of the infinite. In combination with the mouse interaction which controls the size of the grid, it brings a new dimension to this concept of scale and the sublime. The grid itself isn’t visually stunning, but it allows the smaller details to shine. I intentionally saved the color information in a data structure so that it could be updated independently from the interaction with the mouse position. In other words the interaction remains smooth and fluid, while the changes in color are choppy like archaic/rudimentary technology. 
-              <br><br>
-              Similar to the principles of Gestalt psychology, in both of my sketches there is an emphasis on the relationship between parts and the whole. The whole is greater than the sum of its parts, whether the ‘whole’ is the sequence that forms, or the visual combined with an interaction. In both sketches I also experiment with the aesthetics and tropes of old digital media. I think it is important to reflect on the course technology has taken over time, and to be more critical about what we really want out of it. 
-              </p>
+                <div class="mainNav">
+                    <a class="mainButton selected" href="index.html">
+                        <h3>
+                            Abstraction
+                        </h3>
+                    </a>
+                    <a class="mainButton unselected" href="technology.html">
+                        <h3>
+                            Technology
+                        </h3>
+                    </a>
+                    <a class="mainButton unselected" href="culture.html">
+                        <h3>
+                            Culture
+                        </h3>
+                    </a>
+                </div>
             </div>
 
            
-        </div>
 
         </main>
+
+        <footer>
+        </footer>
     </div>
 </body>
 </html>

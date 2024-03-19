@@ -13,3 +13,12 @@ tabs.forEach((tab, index) => {
     tabs[index].classList.add("active");
   });
 });
+
+function toggleBio() {
+  
+  const content = document.getElementById('expandable');
+  if (content) {
+    content.classList.toggle('headerBio');
+  }
+
+}
