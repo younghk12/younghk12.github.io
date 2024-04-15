@@ -72,6 +72,8 @@ a{
 
 /* HEADER AND HEADER COMPONENTS */
 .headerNoBio {
+    position: sticky;
+    top: 0; /* Set to the top of the page */
     background-color: #CBC1C1;
     box-sizing: border-box;
     padding: 0px 36px;
@@ -94,41 +96,113 @@ nav {
     align-items: center;
 }
 
-.navRight {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
+
 
 .bio {
     width: 70%;
     margin-top: 2px;
 }
 
+.image-container {
+    display: flex;
+    align-items: end;
+}
+
+
+.image-container .overlay {
+    visibility: hidden;
+    opacity: 0; /* Make overlay transparent */
+    margin-left: 20px; /* Distance from the image */
+    white-space: nowrap; /* Prevent text wrapping */
+    transition: visibility 0s linear 0.2s, opacity 0.2s linear; /* Delay hiding visibility, animate opacity */
+    padding-bottom: 7px;
+}
+
+.image-container:hover .overlay {
+    visibility: visible;
+    opacity: 1; /* Fully show overlay */
+    transition: opacity 0.3s linear; /* Only animate opacity */
+}
+
+
+
+
+.navRight {
+    position: fixed;
+    z-index: 1001;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    transition: top 1s ease-out;
+}
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.navRight:hover .dropdown {
+    display: flex;
+}
+
 .navRight a {
+    text-align: right;
 }
 
 .navButton {
     text-decoration: none;
     color: black;
     font-family: 'Playfair Display', sans-serif;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     background-color: none;
-    padding: 27px 25px;
+    height: 69px;
+    padding: 0px 27px;
+    text-align: right;
+    border-style: outset;
+    border: 2px solid black;
 }
 
-.navRight a:hover {
+.indepth {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.dropdown2 {
+    display: none;
+    text-align: right;
+}
+
+.indepth:hover .dropdown2{
+    display: flex;
+
+}
+
+
+
+.navRight a:hover h3{
+    color: white;
     background-color: #776301;
+
 }
 
 /* MAIN AND MAIN COMPONENTS */
 main {
     /* background-color: white; */
     outline: 1px solid black;
-    width: 75%;
+    width: 60%;
     margin: auto;
     /* box-shadow: 0px 0px 80px rgba(128, 128, 128, 0.7); */
     position: sticky;
+}
+main:hover {
+    background-color: #d9d4d4;
+
 }
 
 .mainNav {
@@ -155,10 +229,39 @@ main {
     background-color: #c1b8b8;
 }
 
+/* SOFTWARE OVERVIEW SPECIFIC */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* This centers items and distributes spacing evenly */
+    gap: 10px; /* Adjust based on desired spacing between images */
+}
+
+.gallery-item {
+    flex: 1 1 200px; /* flex-grow, flex-shrink, flex-basis */
+    margin: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds shadow for better visual separation */
+    overflow: hidden; /* Ensures the content doesn't spill outside */
+    border-radius: 4px; /* Optional: rounds the corners of the gallery items */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the images cover the area, might crop them a bit */
+    transition: transform 0.3s ease; /* Optional: for a zoom effect on hover */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Optional: zoom effect on hover */
+}
+
+
 /* PROJECT AND CONTENTS */
 .projects {
     margin-bottom: 100px;
 }
+
 .project {
     min-height: 200px;
     width: 110%;
@@ -221,6 +324,8 @@ iframe {
 
 footer {
     background-color: #CBC1C1;
-    min-height: 200px;
-    
+    min-height: 100px;
+    /* position: sticky;
+    bottom: 0px;
+    z-index: -1; Place the element behind others */
 }

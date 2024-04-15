@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="cssReset.css">
     <!-- Styling for the site -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
     <script src="script.js"></script>
+    <script src="customSlider.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,99 +18,165 @@
 
             <nav>
                 <div class="logo" onclick="toggleBio()">
-                    <a href="#" >
-                        <img src="files/Vector.svg" style="width: 100px; height: auto;" alt="">
-                    </a>
+                    <div class="image-container">
+                        <img src="files/Vector.svg" style="width: 100px; height: auto; margin-top: 4px;" alt="">
+                        <div class="overlay">Bio</div>
+                    </div>
+                        
+            
                 </div>
                 
-                    <div class="navRight">
-                        <a href="#" onclick="toggleBio()">
-                            <h3 class="navButton">
-                                Bio
-                            </h3>
-                        </a>
-                        <a href="software.html">
-                            <h3 class="navButton">
-                                Software
-                            </h3>
-                        </a>
-                    </div>
+                    
+                
             </nav>
             
             <div class="bio" >
-                <img src="files/headShot.jpg" style="float: left; width: 100px; margin: 0px 20px 5px 0px; margin-top: -11px;" alt="">
+                <img src="files/headShot.jpg" style="float: left; width: 100px; margin: 0px 20px 5px 0px; margin-top: -14px;" alt="">
                 <p>is a designer and new media artist based in Portland, Oregon. He recently graduated from Whitman College majoring in Theory and Practice in Digital Design. The individually planned major combined new media art, computer science, and art history with a focus on modern art and architecture. The experimental major served as an unofficial model for the Human Centered Design major introduced the next year. Henry realized he was interested in design in highschool after taking a summer course at Sci-Arc. He uses processing, figma, and various coding languages to create interactive interfaces, reflecting his Brutalist inspired style. He is familiar with python, C++, java, and html/javascript. Henry hopes to explore a career in User Experience Design or Architecture.</p>
             </div>
         </header>
-        <main>
-            <div class="mainNav">
-                <a class="mainButton selected" href="index.html">
-                    <h3>
-                        Abstraction
-                    </h3>
+
+
+        <div class="navRight" id="drop">  
+            <a href="#">
+                <h3 class="navButton">Works</h3>
+            </a>
+            <div class="dropdown">
+                <a href="index.html">
+                    <h3 class="navButton">Software Overview</h3>
                 </a>
-                <a class="mainButton unselected" href="technology.html">
-                    <h3>
-                        Technology
-                    </h3>
-                </a>
-                <a class="mainButton unselected" href="culture.html">
-                    <h3>
-                        Culture
-                    </h3>
-                </a>
+
+                <div class="indepth">
+                    <a href="#">
+                        <h3 class="navButton">In Depth Portfolio</h3>
+                    </a>
+                    <div class="dropdown2">
+                        <a href="abstraction.html">
+                            <h3 class="navButton">Abstraction</h3>
+                        </a>
+                        <a href="technology.html">
+                            <h3 class="navButton">Technology</h3>
+                        </a>
+                        <a href="culture.html">
+                            <h3 class="navButton">Culture</h3>
+                        </a>
+                    </div>
+
+                </div>
             </div>
+            
+        </div>
 
+        
+        <main>
+           
 
-
-
-
+            <!-- slider starts here -->
+            <div id="labelContainer">
+                <div class="label">
+                    <span class="label1" >photoshop</span>
+                </div>
+                <div class="label">
+                    <span class="label2" >illustrator</span>
+                </div>
+                <div class="label">
+                    <span class="label3" >figma</span>
+                </div>
+                <div class="label">
+                    <span class="label4" >processing</span>
+                </div>
+                <div class="label">
+                    <span class="label5" >web / C++</span>
+                </div>
+            </div>
+            
+        <div id="sliderContainer">
+            <div id="sliderThumb"></div>
+        </div>
+    
+        
 
             <div class="projects">
-                <div class="project">
-
+                <!-- PHOTOSHOP -->
+                <div class="project" id="div1">
                     <div class="projectTitle">
-                        <h1>Album Cover</h1>
+                        <h1>Uniqlo Window Display</h1>
+                        <div class="softwareBox">Photoshop</div>
+                    </div>
+                  
+                    <p>In the final for my visual merchandising class in Milan, we applied our new knowledge of fashion window displays. After analyzing a fashion brand of our choosing, we designed a window display in accordance with our diagnosis and their brand image. In this project I chose to analyze Uniqlo, a Japanese brand offering colorful basics. After researching the brand, their customer persona, and their competitors, I decided that Uniqlo could benefit the most from more recognizability and brand loyalty. Relating to the urban market through the aesthetics of their city could develop a sense of loyalty, and utilizing the flexibility of their wide color ranges could create striking harmonies by complementing the colors of their cities visual identity. With my window display, I used photoshop to recreate a closed back diorama-like display of the Milanese subway system. I used a mannequin dressed in red clothing and a blue Uniqlo sign to complement the red and yellow coloring of the subway. I photoshopped all of this into the existing Uniqlo store Milan to make it as realistic as possible. 
+                    </p>
+                    <div class="product"><iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FF3WKfk9nLaMSlR9DXjcS1U%2FUNIQLO%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DjoXmytY4j7eboxNH-1" allowfullscreen></iframe></div>
+                    <div class="projectTitle">
+                        <h1>Other Works</h1>
+                        <div class="softwareBox">Photoshop</div>
+                    </div>
+                    <div class="gallery">
+                        <div class="gallery-item"><img src="files/photoshop/anaglyph.jpg" alt="Description of image 1"></div>
+                        <div class="gallery-item"><img src="files/photoshop/brushes.jpg" alt="Description of image 2"></div>
+                        <div class="gallery-item"><img src="files/photoshop/duotone.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/photoshop/halftone.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/photoshop/liquify.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/photoshop/paperCut.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/photoshop/postCardPres.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/photoshop/select&Mask.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/photoshop/shipBottle.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/photoshop/smoke.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/photoshop/textInteraction.jpg" alt="Description of image 3"></div>
+                        <!-- Add more images as needed -->
+                    </div>
+                </div>
+
+                <!-- ILLUSTRATOR -->
+                <div class="project" id="div2">
+                    <div class="projectTitle" >
+                        <h1>Multnomah Stickers</h1>
                         <div class="softwareBox">
-                            <h3>Figma</h3>
+                            <h3>Illustrator</h3>
                         </div>
                     </div>
                     <div class="inspiration">
                         <h2>Inspiration</h2>
                         <div class="imgRow">
-                            <div style="flex: calc(2000/1297)">
-                                <img src='files/kupka_untitled1928.jpeg'>
-                            </div>
-                            <div style="flex: calc(667/600)">
-                                <img src='files/kupka_music1936.jpg'>
-                            </div>
-                            <div style="flex: 1" >
-                                  <img src='files/daptoneTheFrightnrs.jpeg'>
-                            </div>
                         </div>
                     </div>
                     <p>While taking a class on Modernism in Art and Architecture, I decided to dedicate my album cover project to the same concepts we were learning about abstraction in modern art. After analyzing the work Untitled 1928 by Frantisek Kupka, I wanted to explore the motif of circular forms derived from vinyl and CDs. Similar to the way BMW’s logo represents the moving propeller of a plane, Kupka’s untitled piece is an exploration of movement in analog machine-like shapes such as the record player. Through parallel lines and forms seemingly rotating around focal point points, Kupka evokes the same feelings that music does. I used the Frightnrs Daptone album as a starting point, both because it already had the circular form I was looking for and because I loved the stark black and white design with the simple three dimensional typeface. In my redesign for the album cover, I experimented with essential forms like the square and rectangle as well as typography to achieve a prototype for an album cover that expressed the same emotional responses that was achieved by the artists of abstraction. Ultimately, though, this project taught me a valuable lesson. After all of my hyperfixation on form and abstraction, the most impactful feature of my project to the rest of my class was the animation of the vinyl coming out of the sleeve which had taken less than 5 minutes to do. </p>
-                    <div class="product"><iframe class="myiframe" style="border: 1px solid rgba(0, 0, 0, 0.1);"  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3ehM4uuSmV6H6hKIO1luNl%2FFigma-Final%3Ftype%3Ddesign%26t%3DY5rh2HeWOOCphcWw-1" allowfullscreen></iframe></div>
-                </div>
-
-
-
-                <div class="project">
-                    <div class="projectTitle">
-                        <h1>Design System + Processing Final</h1>
+                    <div class="projectTitle" >
+                        <h1>Other Works</h1>
                         <div class="softwareBox">
-                            <h3>Figma</h3>
+                            <h3>illustrator</h3>
                         </div>
                     </div>
-                    <p>In my final project in my digital productions course, I wanted to formalize and document a process I had already been implementing in my work. In one of our previous exercises we worked with various creative techniques from the Studio Size website based on the Luke Sullivan’s book ‘Hey, Whipple, Squeeze This.’ I found myself drawn to techniques such as abstract, exaggerate, and reduce. Using these techniques on typefaces, and more specifically the stroke on typefaces became a trademark of my personal style. In a world of endless content, I think more unique solutions will be found through pushing our design tools to their limits or using them in ways they were never meant to be used. Truly mastering a tool such as Figma should not be measured by your knowledge of its capabilities, but also by your knowledge of its limitations and your ability to push those limitations. An extension of this project would be to animate this process, but as of now Figma cannot smart animate stroke weight. This is one of the reasons I moved towards processing, because I want my imagination to be my only limitation, and because I want a more fundamental understanding of digital tools to strengthen myself as a designer. The value of a design system lies in its flexibility, and my design system can be performed on any shape or typeface. I have an appreciation for many different styles of type, and this process creates unity between highly disparate typefaces. In brutalist fashion, this process of expanding the stroke and turning it into its own form makes use of the typeface’s qualities as a vector, composed of anchor points and bezier curves. In Brutalist architecture, the core argument is not that pretty things are inherently bad, but that pretty things are used to lie. The rounded corners and bright colors that apple and google popularized have been used to hide a consumer enterprise using child labor and selling personal information. Similar to brutalist design and anti design, my design system abstracts the anchor points of the typeface to create something bold and disruptive, while revealing its true nature. My processing final is also an extension of these ideas, grappling with the dichotomy between beautiful lies and ugly truths within the world of UX and web design, human instabilities and contradictions manifested within apps and websites.</p>
-                    <div class="product">
-                        <iframe class="myiframe" style="border: 1px solid rgba(0, 0, 0, 0.1);"
-                            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FksoHi9iAZo4TFX6hGh9Yz5%2FDesign-System-Final%3Ftype%3Ddesign%26t%3DY5rh2HeWOOCphcWw-1"
-                            allowfullscreen></iframe>
-                        <iframe src="https://openprocessing.org/sketch/2013256/embed/" width=100% height="600"></iframe>
+                    <div class="gallery">
+                        <div class="gallery-item"><img src="files/illustrator/distort.jpg" alt="Description of image 1"></div>
+                        <div class="gallery-item"><img src="files/illustrator/imageTrace.jpg" alt="Description of image 2"></div>
+                        <div class="gallery-item"><img src="files/illustrator/logo.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/illustrator/pattern-01.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/illustrator/shapeBuilder.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/illustrator/shapes.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/illustrator/textStroke.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/illustrator/transform-01.jpg" alt="Description of image 3"></div>
+                        <div class="gallery-item"><img src="files/illustrator/widthTool.jpg" alt="Description of image 3"></div>
+                        <!-- Add more images as needed -->
                     </div>
                 </div>
-                <div class="project">
+
+                <!-- FIGMA -->
+                <div class="project" id="div3">
+
+                    <div class="projectTitle">
+                        <h1>Music Event App</h1>
+                        <div class="softwareBox">Figma</div>
+                    </div>
+                    <p>This project was driven by a prompt to create an app for a specific music scene in your home city. The genre, as well as the animal mascot for the logo, were provided by a random generator. In this exercise I took deliberate care to push my own boundaries, strengthening practical skills to supplement my more conceptual liberal arts education. First, this being my biggest project to date, I created robust and flexible components and auto layouts with variants and properties to scale quicker and more elegantly. Secondly, I improved workflow by integrating chatgpt and plugins like Content Reel and Unsplash to provide the content of the site. This allowed me to concentrate more of my efforts on the layout. I also used Apple's open source Figma resources to make a share menu rather than recreate the wheel. Lastly, I approached this as a formal project. I developed components with tightly defined parameters to minimize the risk of misuse by others. I also documented the specs of my components as if I were handing it off to a developer. This approach sometimes meant sacrificing some creative freedom, as the prompt dictated the types of pages that were to be created. However, I still tried to implement my own ideas through the layout and design decisions. For example, I decided to represent artist name, album name, and location with primary color, secondary color, and outline respectively to maintain consistency throughout the app and increase clarity for the user. As the product is mostly technical, it reflects a departure from my typical design tendencies in recognition of my deficiencies. Through this project I was forced to adapt and in doing so discovered new techniques and styles that I wouldn’t have used previously.</p>
+                    <div class="product">
+                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="75%" height="650" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fdx8Befd4n8e9PUrEdMOnYz%2FportlandPop%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DJtOXc2jXw3E0tHoa-1" allowfullscreen></iframe>
+                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="24%" height="650" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fdx8Befd4n8e9PUrEdMOnYz%2FportlandPop%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D125-339%26viewport%3D535%252C371%252C0.4%26t%3DL5udpfsunSYd5BZm-1%26scaling%3Dscale-down%26starting-point-node-id%3D125%253A339%26mode%3Ddesign" allowfullscreen></iframe>
+                    </div>
+                </div>
+                
+                <!-- PROCESSING -->
+                <div class="project" id="div4">
                     <div class="projectTitle">
                         <h1>Random Grit + Colorful Grid</h1>
                         <div class="softwareBox">
@@ -125,26 +193,65 @@
                         <iframe src="https://openprocessing.org/sketch/2013427/embed/" width="100%" height="600"></iframe>
                         <iframe src="https://openprocessing.org/sketch/2013457/embed/" width="100%" height="600"></iframe>
                     </div>
-                
                 </div>
 
-                <div class="mainNav">
-                    <a class="mainButton selected" href="index.html">
-                        <h3>
-                            Abstraction
-                        </h3>
-                    </a>
-                    <a class="mainButton unselected" href="technology.html">
-                        <h3>
-                            Technology
-                        </h3>
-                    </a>
-                    <a class="mainButton unselected" href="culture.html">
-                        <h3>
-                            Culture
-                        </h3>
-                    </a>
+                <!-- WEB/C++ -->
+                <div class="project" id="div5">
+                    <div class="projectTitle">
+                        <h1>Digital Drawing</h1>
+                        <div class="softwareBox">
+                            <h3>Html</h3>
+                        </div>
+                    </div>
+                    <p>In this project I used Microsoft Kinect to make a drawing program. I used a WebSocket to send JSON data over a server between a python program running the Kinect and an HTML/Javascript page serving as the user interface. Kinect and other technologies like virtual and augmented reality create new opportunities to innovate. I noticed that all drawing programs I have used, except maybe newer programs that use the apple pencil, don’t have the ability to dynamically change the traits of the brush while drawing. The apple pencil has the ability to change the stroke with the tilt of the pencil and the force used while drawing. Rather than use an external tool to toggle the brush characteristics, the body could be used instead. The kinect can discern between left hand and right hand, as well as whether the hand is open or closed, so these were the mechanisms that I used to dictate the brush. While you draw with your right hand, your horizontal positioning of your left hand is used to toggle between the possible variable traits. In this class we had a special emphasis on accessibility, so to make my drawing program accessible to a wider audience. I made it so that the left and right hands were not calibrated to a ‘standard’ wingspan or distance, it would be calibrated to the maximum wingspan of that specific user. This way a user would never have an issue reaching the edge of the frame while drawing etc. 
+                    </p>  
+
+                    <div class="product">
+                        <div class="imgRow">
+                            <div style="flex: 1;">
+                                <img src="files/paint.png" alt="Image 1">
+                            </div>
+                            <div style="flex: 1;">
+                                <video controls><source src="files/Untitled.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                            </div>
+                        </div>
+                    </div>        
+
+                    <div class="projectTitle">
+                        <h1>Ray Tracer</h1>
+                        <div class="softwareBox">
+                            C++
+                        </div>
+                    </div>
+
+                    <div class="inspiration">
+                        <h2>Inspiration</h2>
+                        <!-- <div class="img1" style="margin-bottom: 10px; flex: calc(2600/1800)" > -->
+                            <img style="box-sizing: border-box;" src="files/Map 7 (1).jpg">
+                        <!-- </div> -->
+                    </div>
+
+                    <p>In the course Interactive Computer Graphics, we spent the majority of the semester working on a ray tracer that would simulate real lighting on spheres and planes. Using C++, we formed an understanding of vectors, and the equations necessary for ray-object intersection, direct and ambient lighting, and more. For my personal extension of the project, I decided to do texture mapping. With planes this is relatively straightforward, but with spheres it requires wrapping or mapping a two dimensional plane onto a sphere. This process was merely a technical exercise in math and computer science until I gained valuable insights later through an unlikely source. 
+                        <br><br>
+                        In an Art History course on the Art of Colonial India, I examined a French naval maritime map from the year 1789. In cartography back then they used the same equation but to reverse the process, turning the spherical space of earth and mapping it onto a two dimensional plane. The term for this organization of space on maps is called mercator projections. Mercator projections are frequently criticized for distortion, manipulating space near the poles to appear larger than it actually is. With Mercator Projections, there are two different methods of plotting your course. Rhumb lines, or loxodromes, are lines that maintain a constant angle from the lines of longitude and latitude. This was beneficial because it allowed ships to use a method called dead reckoning in which they would navigate in a straight line using the last known position, course, and speed. Although this method is practical with the technology available, it is not the shortest distance from point to point. Great Circle, or orthodromes, are the quickest way between two points on a sphere, however they are curved lines on a map using mercator projections and do not maintain a constant course. Maps, then, do not show objective truth like they were purported to. Along with the addition of details like the fleur de lis and the Paris meridian, it becomes clear that utilitarian and scientific maps also serve the purpose of naturalizing French possession  of India and justifying French colonization of India as objective, scientific truth. 
+                        <br><br>
+                        Raytracing, similarly, is taught as a somewhat scientific process, meant to recreate reality as accurately and objectively as possible. By using the same equation as the mercator projections, by extension it is subject to the same distortions. Likewise, the lighting equations are not necessarily picture perfect, they are simply the most realistic lighting we can achieve with the computing power we have available. As Engel argues, the perfect map with every detail would defeat the very purpose of cartography: to represent land for the sake of personal, social, and cultural means. I think this could just as easily be applied to ray tracers. The purpose of tools such as cartography and raytracing, is cultural just as much as utilitarian. This doesn’t diminish the achievement of coding a functioning raytracer, but it is also crucial to understand that even the most seemingly objective forms of media have cultural implications. One day I hope to extend my raytracer further, texture mapping images onto planes and spheres. 
+                        <br><br>
+                        Edney,  “Mapping an Empire: The Geographical Construction of British India, 25
+                      </p>
+                    <div class="product">
+                        <div class="imgRow">
+                            <div class="img3" style="flex: calc(892/895)">
+                                <img src="files/Screenshot 2022-11-28 123052.png">
+                            </div>
+                            <div class="img1" style="flex: calc(546/569)" >
+                                <img src="files/Screenshot 2022-12-19 012035.png">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                
             </div>
 
            
