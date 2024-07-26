@@ -1,12 +1,5 @@
 /* 
     TO DO
-    X- adjust margins on softwareboxes
-    X- put footer at the bottom
-    X- bio section clicks open
-    X- figure out how to animate
-    X- do technology 
-    X- do culture
-    X- black around final product
     - software page
     - figure out links that jump to section
     - explore fonts
@@ -15,7 +8,7 @@
     - screen sizes
 
     STRETCH GOALS
-    - make interaction of spectrum for softwares 
+    X make interaction of spectrum for softwares 
     
     PROJECT GOALS
     - add album interaction
@@ -162,8 +155,11 @@ nav {
     height: 69px;
     padding: 0px 27px;
     text-align: right;
-    border-style: outset;
+    /* border-style: outset; */
     border: 2px solid black;
+    box-sizing: border-box;
+    margin-bottom: -2px; /* Overlaps with the border of the next box */
+    margin-left: -2px;
 }
 
 .indepth {
