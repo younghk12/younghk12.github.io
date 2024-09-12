@@ -1,14 +1,20 @@
 /* 
     TO DO
-    - software page
-    - figure out links that jump to section
+
+    High Priority:
     - explore fonts
+    - Main screen with justification / hook
+    - fix photo collage
+    - fix wording
+    - remove multnomah stickers / other unfinished
+
+    Low Priority:
+    - make better photo collage logic
+    - make carousel for images
+    - figure out links that jump to section
     - photos to put next to figma imbeds
     - clean up projects, add inspiration/process images
     - screen sizes
-
-    STRETCH GOALS
-    X make interaction of spectrum for softwares 
     
     PROJECT GOALS
     - add album interaction
@@ -224,6 +230,57 @@ main:hover {
 .unselected:hover {
     background-color: #c1b8b8;
 }
+
+/* LANDING PAGE SPECIFIC */
+.hero {
+    height: 85vh;
+    background-color: green;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hero .image-container{
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.hero img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.text-container{
+    padding: 6vh 5vw 2vh;
+  
+    overflow: visible;
+    min-height: 100px;
+    flex: 1;
+    background-color: #d9d4d4;
+}
+
+.text-container h1{
+    position: relative;
+    padding-bottom: 5vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.text-container p{
+    position: relative;
+    font-family: "DM Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+.text-container a:hover h3{
+    color: white;
+    background-color: #232323;
+ 
+}
+
 
 /* SOFTWARE OVERVIEW SPECIFIC */
 .gallery {
