@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Eric Meyers css reset -->
+    <link rel="stylesheet" href="cssReset.css">
+    <!-- Styling for the site -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
+    <script src="script.js"></script>
+    <script src="customSlider.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="headerNoBio" id="expandable">
+
+            <nav>
+                <div class="logo" onclick="toggleBio()">
+                    <div class="image-container">
+                        <img src="files/Vector.svg" style="width: 100px; height: auto; margin-top: 4px;" alt="">
+                        <div class="overlay">Bio</div>
+                    </div>
+                        
+            
+                </div>
+                
+                    
+                
+            </nav>
+            
+            <div class="bio" >
+                <img src="files/headShot.jpg" style="float: left; width: 100px; margin: 0px 20px 5px 0px; margin-top: -14px;" alt="">
+                <p>is a designer and new media artist based in Portland, Oregon. He recently graduated from Whitman College majoring in Theory and Practice in Digital Design. The individually planned major combined new media art, computer science, and art history with a focus on modern art and architecture. The experimental major served as an unofficial model for the Human Centered Design major introduced the next year. Henry realized he was interested in design in highschool after taking a summer course at Sci-Arc. He uses processing, figma, and various coding languages to create interactive interfaces, reflecting his Brutalist inspired style. He is familiar with python, C++, java, and html/javascript. Henry hopes to explore a career in User Experience Design or Architecture.</p>
+            </div>
+        </header>
+
+
+        <div class="navRight" id="drop">  
+            <a href="#">
+                <h3 class="navButton">Works</h3>
+            </a>
+            <div class="dropdown">
+                <a href="index.html">
+                    <h3 class="navButton">Software Overview</h3>
+                </a>
+
+                <div class="indepth">
+                    <a href="#">
+                        <h3 class="navButton">In Depth Portfolio</h3>
+                    </a>
+                    <div class="dropdown2">
+                        <a href="abstraction.html">
+                            <h3 class="navButton">Abstraction</h3>
+                        </a>
+                        <a href="technology.html">
+                            <h3 class="navButton">Technology</h3>
+                        </a>
+                        <a href="culture.html">
+                            <h3 class="navButton">Culture</h3>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+        <main>
+           <div class="projectContainer">
+
+            <div class="imgContainer">
+                <img src="files/_projects/masonryLayout/horizontalMasonry.jpg" alt="">
+            </div>
+
+            <h1>Responsive horizontal masonry layout for image galleries</h1>
+
+            <h3>Problem solving for a more elegant way to display many images in a grid <span>Jump to solution-></span></h3>
+
+            <p><span>Role: </span>sole designer <br>
+                <span>Duration: </span>3 Months <br>
+                <span>Completed: </span>Aug 2024<br>
+                <span>Skills: </span>CSS, Javascript, Problem Solving 
+                <br><br>
+                <span>*just to premise, I am constantly learning and do not claim that this is the best solution or the only solution, this is only meant to show my research and problem solving process</span>
+            </p>
+                
+            <h2>Considering image display from the beginning</h2>
+
+            <h3>During my work on two printed art publications, I explored possibilities for fair and faithful image layouts in limited space</h3>
+
+            <ul>
+                <li><span>Bluemoon</span><br>Worked collaboratively on a 4-person team to select art for Whitman College's award-winning, annual arts and literature magazine. Worked in Adobe InDesign to create the layout for Edition 34 of the magazine. </li>
+                <li><span>PhotoIreland</span><br>Undertook a wide range of responsibilities, including designing the catalog in Adobe InDesign, assisted in constructing exhibition spaces and hanging professional photography, and managed the festival desk while welcoming guests. </li>
+            </ul>
+            
+            <h3>From these explorations I began thinking about how to display images fairly, giving every artist the same amount of real estate on the page. However, I was more interested in creating a systematic way to display images. This was when I started to learn coding and found that the same issues are present on the web. </h3>
+
+            <ul>
+                <span>Key differences from print</span>
+                <li>fewer limitations on space</li>
+                <li>don’t have to account for gutters, bleed, and trim areas associated with physical printing</li>
+                <li>defining rules to govern image placement rather than manual placement</li>
+                <li>have to decide between existing responsive layout techniques such as css grid, flexbox, or create a custom solution with javascript</li>
+            </ul>
+
+            <h2>Current web solutions don’t do images justice</h2>
+
+            <h3>Current web solutions seem to fall into one of two categories, represented by instagram and unsplash. </h3>
+
+            <ul>
+                <li><span>instagram</span><br>forces images into a square aspect ratio with “object: fill” to make a grid, cropping images in the process</li>
+                <li><span>unsplash</span><br> uses the more professional solution, splitting the page into columns and forcing images to fit the set width. This typically favors vertically oriented photos and results in photos of radically different sizes</li>
+            </ul>
+
+            <h2>Research for better solutions</h2>
+
+            <h3>As a starting point I looked at the solutions offered by figma, the leading web based design tool for ux (figma reflects the current common web solutions)</h3>
+
+            <ul>
+                <span>figma</span>
+                <li>Figma’s autolayout is meant to resemble css flexbox as a way to make responsive one dimensional layouts</li>
+                <li>image behavior is based on frames that either fit or fill, cropping images or leaving strange gaps in layouts</li>
+                <li>The Figma community has alternative solutions for vertical and horizontal resizing to maintain aspect ratio, but as impressive as these workarounds are, they are inconsistent and break with new updates</li>
+            </ul>
+
+            <h3>With some knowledge of coding, I new that the solution I imagined was possible, it was just a matter how elaborate the process would be. I researched the best responsive solutions with css and only found more workarounds</h3>
+
+            <ul>
+                <span>Solution by Kartik Prabhu</span>
+                <li>responsively scales images to fill available space</li>
+                <li>preserves aspect ratio</li>
+                <li>slightly favors horizontal aspect ratios</li>
+                <li>can’t wrap to multiple rows</li>
+                <li>manual input of aspect ratio is required (inelegant)</li>
+            </ul>
+
+            <ul>
+                <span>Conclusion</span>
+                <li>css alone doesn’t currently support this behavior</li>
+                <li>some degree of javascript necessary</li>
+            </ul>
+
+            <ul>
+                <span>Desired behavior for my design</span>
+                <li>gives an even amount of real estate to each image</li>
+                <li>responsively scales images to fill available space (no gaps)</li>
+                <li>preserves aspect ratio automatically (no cropping)</li>
+                <li>distributes images to multiple rows</li>
+                <li>css only solution or minimal javascript</li>
+            </ul>
+
+            <h1>Solution</h1>
+
+            <h2>An elegant solution with minimal javascript to work in tandem with flexbox</h2>
+
+            <h3>To compliment the solution by Kartik Prabhu, I wrote some javascript that extends his flexbox design, becoming dynamic, responsive and elegant</h3>
+
+            <ul>
+                <span>explanation</span>
+                <li>dynamically calculates aspect ratio so hardcoding isn’t necessary</li>
+                <li>javascript converts minHeight to minWidth with aspectRatio</li>
+                <li>minWidth prevents any one image from being excessively shrunken and deprioritized</li>
+                <li>minWidth forces flexbox to wrap to a new row when any image gets too small</li>
+            </ul>
+
+            <ul>
+                <span>problem -> solution</span>
+                <li>responsive</li>
+                <li>no gaps or unpredictable layouts</li>
+                <li>no cropping images</li>
+                <li>images are given the most fair distribution of space</li>
+            </ul>
+
+            <ul>
+                <span>limitations</span>
+                <li>vertically oriented images can’t take up full container width if they are the sole image on their row </li>
+                <li>This is only an issue at small screen sizes, where you likely wouldn’t want detailed image galleries anyway</li>
+            </ul>
+
+            <h2>Takeaways</h2>
+
+            <h3>This solution may not be a css one liner, but it uses simple javascript to achieve an impactful result. There are many solutions for column oriented image layouts but there is no reason there shouldn’t be horizontal solutions as well. This project and the research I conducted reveal a potential demand in the community for this type of behavior and this solution could be considered as a new feature added to css in the future. </h3>
+
+            </div>
+        </main>
+
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>

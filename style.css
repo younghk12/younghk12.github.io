@@ -65,8 +65,10 @@ a{
 
 /* PAGE STRUCTURAL ELEMENTS */
 .container {
-
-    
+    /* width: 80%;
+    margin-right: 0;
+    margin-left: auto;    
+     */
 } 
 
 /* HEADER AND HEADER COMPONENTS */
@@ -194,14 +196,12 @@ nav {
 }
 
 /* MAIN AND MAIN COMPONENTS */
-main {
-    /* background-color: white; */
+/* main {
     outline: 1px solid black;
     width: 60%;
     margin: auto;
-    /* box-shadow: 0px 0px 80px rgba(128, 128, 128, 0.7); */
     position: sticky;
-}
+} */
 main:hover {
     background-color: #d9d4d4;
 
@@ -239,18 +239,122 @@ main:hover {
     justify-content: flex-start;
 }
 
-.hero .image-container{
+.projectCard {
+    height: 75vh;
+    width: 80%;
+    justify-self: center;
+    background-color: green;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10vh;
+    overflow: hidden;
+}
+
+.projectCard .image-container{
     flex-grow: 0;
     flex-shrink: 0;
 }
 
-.hero img {
+.projectCard img {
     height: 100%;
     object-fit: contain;
 }
 
+.projectContainer {
+    padding: 0 15vw;
+}
+
+.projectContainer h1{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 60px;
+    font-weight: 600;
+    font-style: normal;
+    padding-bottom: 40px;
+}
+
+.projectContainer h2{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 32px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.projectContainer h3{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 22px;
+    font-style: normal;    
+    padding-bottom: 40px;
+}
+
+
+
+.projectContainer p{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 20;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 20px;
+}
+
+.projectContainer ul{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 20;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 20px;
+    list-style-type: disc;
+}
+
+.projectContainer span{
+    font-weight: 700;
+}
+
+.listContainer {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-between;
+}
+
+ul {
+    flex: 1;
+}
+
+li {
+    overflow-wrap: break-word;
+}
+
+.projectContainer .imgContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+.imgContainer a{
+    flex: 1 0 48%;
+    position: relative; /* Establish a positioning context */
+    display: inline-block; /* Adjust based on layout needs */
+}
+
+a img {
+    object-fit:cover;
+}
+
+.imgContainer .overlay{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #00000068;
+}
+
+.overlay p{
+    color: #e3e3e3;
+    padding: 0;
+}
+
 .text-container{
-    padding: 6vh 5vw 2vh;
+    padding: 6vh 5vw 8vh;
   
     overflow: visible;
     min-height: 100px;
@@ -263,6 +367,7 @@ main:hover {
     padding-bottom: 5vh;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
+    font-size: 3rem;
     font-weight: 600;
     font-style: normal;
 }
