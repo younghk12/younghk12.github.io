@@ -2,8 +2,8 @@ window.addEventListener('load', () => {
     
     // Select all image containers within the gallery
     const imageContainers = document.querySelectorAll('.gallery .gallery-item');
-    const minHeight = 300;
-    const maxHeight = 600;
+    const minHeight = 200;
+    const maxHeight = minHeight*(16/9);
 
     imageContainers.forEach(container => {
       const img = container.querySelector('img');
@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
 
             container.style.flex = `${aspectRatio} ${aspectRatio} 0`;
             container.style.minWidth = `${minWidth}px`;
-            // container.style.maxWidth = `${maxWidth}px`;
+            container.style.maxWidth = `${maxWidth}px`;
         }
         }
 

@@ -1,0 +1,15 @@
+TODO:
+
+    O. finish writing for archive occhiali and input
+
+    O. make profile more personal
+
+    O. document masonry
+
+    O. Media queries for projects
+
+    O. Dropdown menu / hamburger
+
+    O. Alignment
+
+    O. 
