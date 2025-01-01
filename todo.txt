@@ -1,6 +1,6 @@
 TODO:
 
-    O. finish writing for archive occhiali and input
+    X. finish writing for archive occhiali and input
 
     O. make profile more personal
 
@@ -13,3 +13,29 @@ TODO:
     O. Alignment
 
     O. 
+
+
+.navButton {
+    text-decoration: none;
+    color: black;
+    font-family: "DM Mono", monospace;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    background-color: none;
+    justify-content: flex-end;
+    height: 5rem;
+    margin-bottom: -2px; 
+}
+
+.navBar {
+    top: 10vh;
+    position: sticky;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+}
