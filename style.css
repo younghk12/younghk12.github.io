@@ -434,7 +434,7 @@ a img {
         /* display: none; */
         position: relative;
         padding: 7vh 8vw;
-        scroll-snap-align: end;
+        scroll-snap-align: start;
         z-index: 20;
     }
 
