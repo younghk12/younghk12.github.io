@@ -440,7 +440,7 @@ a img {
 
     .projectCard {
         position: relative;
-        height: calc(100vh - 44px);
+        /* height: calc(100vh - 44px); */
         height: calc(100dvh - 44px);
         width: 100vw;
         margin-bottom: 0;
