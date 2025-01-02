@@ -307,7 +307,25 @@ a img {
 
 @media (max-width: 700px){
 
-    html {
+    html, body {
+        /* overflow: hidden; */
+        /* height: 100%; */
+    }
+
+    body {
+        /* display: block; */
+        /* overflow: visible; */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    main {
+        /* overflow: visible; */
+        padding-top: 0;
+    }
+
+    main {
+        height: calc(100vh - 44px);
         overflow-y: scroll;
         scroll-snap-type: y mandatory;
     }
@@ -325,6 +343,7 @@ a img {
     }
 
     .projectContainer{
+        
     
         h1, p, ul{
             font-family: "IBM Plex Mono", monospace;
@@ -381,12 +400,7 @@ a img {
         }
     }
 
-    body {
-        display: block;
-        overflow: visible;
-        margin-left: 0;
-        margin-right: 0;
-    }
+    
 
     nav {
         position: sticky;
@@ -414,10 +428,7 @@ a img {
         padding: 0 2rem;
     }
 
-    main {
-        overflow: visible;
-        padding-top: 0;
-    }
+    
 
     .title {
         /* display: none; */
@@ -433,7 +444,7 @@ a img {
         height: calc(100dvh - 44px);
         width: 100vw;
         margin-bottom: 0;
-        scroll-snap-align: end;
+        scroll-snap-align: start;
         scroll-snap-type: always;
         overflow: hidden;
     }
