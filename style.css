@@ -16,12 +16,12 @@ h1{
 }
 
 h2{
-    padding-bottom: 5vh;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
     font-size: 3rem;
     font-weight: 600;
     font-style: normal;
+    margin-bottom: 3rem;
 }
 
 p{
@@ -29,12 +29,9 @@ p{
     font-weight: 300;
     font-style: normal;
     font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
-.text-container a:hover h3{
-    color: white;
-    background-color: #232323;
-}
 
 .projectContainer{
     
@@ -229,7 +226,23 @@ li {
     flex-wrap: wrap;
 }
 
+.projectButton {
+    text-decoration: none;
+    color: black;
+    font-family: "DM Mono", monospace;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    height: 5rem;
+    margin-bottom: -2px; 
+}
 
+.projectButton:hover {
+    color: white;
+    background-color: #232323;
+}
 
 .imgContainer a{
     flex: 1 0 48%;
@@ -256,7 +269,6 @@ a img {
 
 .text-container{
     padding: 6vh 5vw 8vh;
-  
     overflow: visible;
     min-height: 100px;
     flex: 1;
@@ -474,8 +486,18 @@ a img {
     }
 
     .projectContainer {
-        margin: 10vw;
-        
+        margin: 10vw;   
+    }
+    
+    .projectButton {
+        display: inline-flex;
+        background-color: white;
+        color: #232323;
+        padding: 0 2rem;
+    }
+
+    .projectButton:hover {
+        background-color: #ffffff00;
     }
 
     .overlay{
