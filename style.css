@@ -34,6 +34,8 @@ p{
 
 
 .projectContainer{
+
+    
     
     h1, p, ul{
         font-family: "IBM Plex Mono", monospace;
@@ -50,7 +52,8 @@ p{
         font-size: 1.2rem;
         font-weight: 400;
         margin-left: 6vw;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
+        line-height: 1.2rem;
     }
 
     h1{
@@ -78,9 +81,19 @@ p{
         list-style-type: disc;
     }
 
+    li{
+        margin-top: .5rem;
+    }        
+
     span{
         font-weight: 700;
+        line-height: 1.8rem;
     }
+
+
+
+
+
 }
 
 /* UNIVERAL STRUCTURAL ELEMENTS */
@@ -196,36 +209,6 @@ main {
     object-fit: contain;
 }
 
-
-
-
-
-
-
-/* Project Page Specific */
-
-
-
-.listContainer {
-    display: flex;
-    column-gap: 20px;
-    justify-content: space-between;
-}
-
-ul {
-    flex: 1;
-}
-
-li {
-    overflow-wrap: break-word;
-}
-
-.projectContainer .imgContainer{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .projectButton {
     text-decoration: none;
     color: black;
@@ -242,6 +225,40 @@ li {
 .projectButton:hover {
     color: white;
     background-color: #232323;
+}
+
+
+
+
+
+
+
+/* Project Page Specific */
+
+
+
+.listContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    ul {
+        /* margin: 0; */
+    }
+}
+
+ul {
+    flex: 1;
+}
+
+li {
+    overflow-wrap: break-word;
+}
+
+.projectContainer .imgContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
 }
 
 .imgContainer a{
@@ -265,6 +282,7 @@ a img {
 .overlay p{
     color: #e3e3e3;
     padding: 0;
+    margin: 0;
 }
 
 .text-container{
@@ -274,6 +292,41 @@ a img {
     flex: 1;
     background-color: #d9d4d4;
 }
+
+.imgText {
+    display: block;
+    margin-bottom: 3rem;
+    overflow: hidden;
+
+    .imgContainer{
+        float: left;
+        width: 50%;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+video {
+    margin: 1rem 0 1rem;
+}
+
+
+
+/* Bio Page */
+
+
+
+.profilePic {
+    float: left; 
+    width: 100px;
+    margin: 0 30px 30px 0;
+}
+
+
+
+
+
+
 
 /* Mobile Structual Elements */
 
@@ -332,19 +385,17 @@ a img {
         margin-right: 0;
     }
 
-    main {
-        /* overflow: visible; */
-        padding-top: 0;
-    }
+    
 
     main {
+        padding-top: 0;
         height: calc(100dvh - 64px);
         overflow-y: scroll;
         scroll-snap-type: y mandatory;
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     h2 {
@@ -357,38 +408,22 @@ a img {
 
     .projectContainer{
         
-    
-        h1, p, ul{
-            font-family: "IBM Plex Mono", monospace;
-            padding: 0;
-        }
-    
-        h2, h3{
-            font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
-            padding: 0;
+
+        h1, h2, h3 {
+            margin: 0 8vw;
         }
     
         p, ul{
             font-size: 1.1rem;
-            font-weight: 400;
-            margin-left: 6vw;
-            margin-right: 0;
-            margin-bottom: 2rem;
-            margin: 0 10vw;
-
+            margin: 0 12vw;
         }
     
         h1{
             font-size: 3rem;
-            font-weight: 600;
-            font-style: normal;
             margin-bottom: 1.5rem;
         }
     
         h2{
-            font-size: 2rem;
-            font-weight: 600;
             margin-top: 3rem;
             margin-bottom: 1.33rem;
         }
@@ -400,16 +435,11 @@ a img {
         }
     
         ul{
-            list-style-type: disc;
+            margin-bottom: 2rem;
         }
-
-        li{
-            margin-bottom: .5rem;
-        }        
     
         span{
             font-weight: 700;
-            margin-bottom: .5rem;
         }
     }
 
@@ -432,13 +462,15 @@ a img {
     }
 
     .navButtons {
-        width: 100%;
-        flex: 0;
+        min-width: 180px;
+        /* width: 100%; */
+        /* flex: 0; */
     }
 
     .navButton {
+        /* min-width: 90px; */
         height: 100%;
-        padding: 0 2rem;
+        /* padding: 0 2rem; */
     }
 
     
@@ -448,7 +480,7 @@ a img {
         position: relative;
         padding: 7vh 8vw;
         scroll-snap-align: start;
-        z-index: 20;
+        z-index: 20;    
     }
 
     .projectCard {
@@ -486,8 +518,10 @@ a img {
     }
 
     .projectContainer {
-        margin: 10vw;   
+        /* margin: 10vw;    */
     }
+
+
     
     .projectButton {
         display: inline-flex;
@@ -508,24 +542,28 @@ a img {
         display: block;
     }
 
+    .imgContainer {
+        margin-bottom: 3rem;
+    }
+
     .imgContainer a{
         flex: 1 1 100%;
     }
+
+    .imgText {
+        .imgContainer{
+            display: block;
+            float: none;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+    }
+
+    .bio {
+        padding-top: 20px;
+    }
 }
 
-/* Bio Page */
-
-.bio {
-    margin-top: 6vh;
-    padding-top: 8px;
-
-}
-
-.profilePic {
-    float: left; 
-    width: 100px;
-    margin: 0 30px 30px 0;
-}
 
 
 

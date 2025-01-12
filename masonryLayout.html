@@ -61,17 +61,19 @@
             <span>Completed: </span>Aug 2024<br>
             <span>Skills: </span>CSS, Javascript, Problem Solving 
             <br><br>
-            <span>*just to premise, I am constantly learning and do not claim that this is the best solution or the only solution, this is only meant to show my research and problem solving process</span>
+            *just to premise, I am constantly learning and do not claim that this is the best solution or the only solution, this is only meant to show my research and problem solving process
         </p>
             
         <h2>Considering image display from the beginning</h2>
 
         <h3>During my work on two printed art publications, I explored possibilities for fair and faithful image layouts in limited space</h3>
 
-        <ul>
-            <li><span>Bluemoon</span><br>Worked collaboratively on a 4-person team to select art for Whitman College's award-winning, annual arts and literature magazine. Worked in Adobe InDesign to create the layout for Edition 34 of the magazine. </li>
-            <li><span>PhotoIreland</span><br>Undertook a wide range of responsibilities, including designing the catalog in Adobe InDesign, assisted in constructing exhibition spaces and hanging professional photography, and managed the festival desk while welcoming guests. </li>
-        </ul>
+        <p>
+            <span>Bluemoon</span><br>Worked collaboratively on a 4-person team to select art for Whitman College's award-winning, annual arts and literature magazine. Worked in Adobe InDesign to create the layout for Edition 34 of the magazine.
+        <br><br>
+            <span>PhotoIreland</span><br>Undertook a wide range of responsibilities, including designing the catalog in Adobe InDesign, assisted in constructing exhibition spaces and hanging professional photography, and managed the festival desk while welcoming guests.
+        </p>
+        
         
         <h3>From these explorations I began thinking about how to display images fairly, giving every artist the same amount of real estate on the page. However, I was more interested in creating a systematic way to display images. This was when I started to learn coding and found that the same issues are present on the web. </h3>
 
@@ -87,10 +89,12 @@
 
         <h3>Current web solutions seem to fall into one of two categories, represented by instagram and unsplash. </h3>
 
-        <ul>
-            <li><span>instagram</span><br>forces images into a square aspect ratio with “object: fill” to make a grid, cropping images in the process</li>
-            <li><span>unsplash</span><br> uses the more professional solution, splitting the page into columns and forcing images to fit the set width. This typically favors vertically oriented photos and results in photos of radically different sizes</li>
-        </ul>
+        <p>
+            <span>Instagram</span><br>forces images into a square aspect ratio with “object: fill” to make a grid, cropping images in the process
+            <br><br>
+            <span>Unsplash</span><br> uses the more professional solution, splitting the page into columns and forcing images to fit the set width. This typically favors vertically oriented photos and results in photos of radically different sizes
+        </p>
+        
 
         <h2>Research for better solutions</h2>
 
@@ -104,7 +108,7 @@
         </div>
 
         <ul>
-            <span>figma</span>
+            <span>Figma</span>
             <li>Figma’s autolayout is meant to resemble css flexbox as a way to make responsive one dimensional layouts</li>
             <li>image behavior is based on frames that either fit or fill, cropping images or leaving strange gaps in layouts</li>
             <li>The Figma community has alternative solutions for vertical and horizontal resizing to maintain aspect ratio, but as impressive as these workarounds are, they are inconsistent and break with new updates</li>
@@ -160,7 +164,7 @@
 
         <h1>Solution</h1>
 
-        <h2>An elegant solution with minimal javascript to work in tandem with flexbox</h2>
+        <h3>An elegant solution with minimal javascript to work in tandem with flexbox</h3>
 
         <div class="imgContainer">
             <a href="">
