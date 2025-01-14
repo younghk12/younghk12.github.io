@@ -54,10 +54,11 @@
 
         <h1>Responsive horizontal masonry layout for image galleries</h1>
 
-        <h3>Problem solving for a more elegant way to display many images in a grid <span>Jump to solution-></span></h3>
+        <h3>Problem solving for a more elegant way to display many images in a grid 
+        <a href="#solution"><span>Jump to solution-></span></a></h3>
 
-        <p><span>Role: </span>sole designer <br>
-            <span>Duration: </span>3 Months <br>
+        <p><span>Role: </span>Sole designer <br>
+            <span>Duration: </span>1 Month <br>
             <span>Completed: </span>Aug 2024<br>
             <span>Skills: </span>CSS, Javascript, Problem Solving 
             <br><br>
@@ -162,7 +163,7 @@
             <li>css only solution or minimal javascript</li>
         </ul>
 
-        <h1>Solution</h1>
+        <h1 id="solution">Solution</h1>
 
         <h3>An elegant solution with minimal javascript to work in tandem with flexbox</h3>
 
@@ -174,6 +175,40 @@
         </div>
 
         <h3>To compliment the solution by Kartik Prabhu, I wrote some javascript that extends his flexbox design, becoming dynamic, responsive and elegant</h3>
+
+        <pre><code>
+window.addEventListener('load', () => {
+
+    const imageContainers = document.querySelectorAll('.gallery .gallery-item');
+    const minHeight = 200;
+    const maxHeight = minHeight*(16/9);
+
+    imageContainers.forEach(container => {
+        const img = container.querySelector('img');
+        
+        
+        img.addEventListener("load", img_loaded, false);
+        if (img.complete) {
+        img_loaded.call(img);
+        img.removeEventListener("load", img_loaded, false);
+
+        function img_loaded(){
+            const imgWidth = img.naturalWidth;
+            const imgHeight = img.naturalHeight;
+            const aspectRatio = imgWidth / imgHeight;
+            console.log(aspectRatio);
+            const minWidth = minHeight * aspectRatio;
+            const maxWidth = maxHeight * aspectRatio;
+
+            container.style.flex = `${aspectRatio} ${aspectRatio} 0`;
+            container.style.minWidth = `${minWidth}px`;
+            container.style.maxWidth = `${maxWidth}px`;
+        }
+        }
+
+    });
+    });
+        </code></pre>
 
         <ul>
             <span>explanation</span>
