@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Plus+Jakarta+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
     <!-- Eric Meyers css reset -->
     <link rel="stylesheet" href="cssReset.css">
     <!-- Styling for the site -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="slider.css">
-    <script src="script.js"></script>
-    <script src="customSlider.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <script src="gallery.js" defer></script>
 </head>
 <body>
     <nav>
@@ -23,18 +27,24 @@
                 <img  src="files/Vector.svg" style="width: 100px;" alt="Henry Young">
             </div>
             
-            <div class="navButtons">
+            <button class="hbmenu button" aria-expanded="false" data-target="mainMenu">
+                <svg fill="var(--buttonColor)" class="hamburger" viewbox="0 0 100 100" width="100%">
+                    <line class="line top" x1="20" x2="80" y1="35" y2="35" stroke="black" stroke-width="10" stroke-linecap="round"></line>
+                    <line class="line bottom" x1="20" x2="80" y1="65" y2="65" stroke="black" stroke-width="10" stroke-linecap="round"></line>
+                </svg>
+            </button>
+
+            <div class="navButtons expandable" id="mainMenu" aria-expanded="false">
+                <a class="navButton dropdownButton button" aria-expanded="false" data-target="works" href="index.html"><h3>Works</h3></a>
+                <a class="navButton" href="bio.html"><h3>Bio</h3></a>
                 <div class="dropdown">
-                    <a class="navButton" style="width: 100%;"  href="index.html"><h3>Works</h3></a>
-                    <div class="dropdownContents">
-                        <a class="navButton" href="uniqloWindow.html"><h3>Uniqlo Display</h3></a>
-                        <a class="navButton" href=""><h3>Archive Occhiali</h3></a>
-                        <a class="navButton" href="masonryLayout.html"><h3>Horizontal Masonry</h3></a>
+                    <a class="navButton dropdownButton button" aria-expanded="false" data-target="moreWorks" href="javascript:void(0)"><h3>More Works+</h3></a>
+                    <div class="dropdownContents expandable" id="moreWorks" aria-expanded="false">
+                        <a class="navButton" href="graphic.html"><h3>Graphic Design</h3></a>
                     </div>
                 </div>
-                <a class="navButton" href="bio.html"><h3>Bio</h3></a>
-                <!-- <a class="navButton" href=""><h3>More Works</h3></a> -->
-                
+                <div>
+                </div>
             </div>
         </div>
     </nav>

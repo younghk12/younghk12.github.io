@@ -1,7 +1,14 @@
 window.addEventListener('load', () => {
     
-    // Select all image containers within the gallery
-    const imageContainers = document.querySelectorAll('.gallery .gallery-item');
+
+    if (screen.width <= 700) {
+      // Your logic that should only run on small screens (<= 700px)
+      console.log('Screen is 700px or smaller, running logic!');
+      // Place your desired code here
+    } else {
+      // Optional: Code for larger screens
+      console.log('Screen is larger than 700px, skipping logic.');
+      const imageContainers = document.querySelectorAll('.gallery .gallery-item');
     const minHeight = 200;
     const maxHeight = minHeight*(16/9);
 
@@ -29,4 +36,7 @@ window.addEventListener('load', () => {
         }
 
     });
+    }
+    // Select all image containers within the gallery
+    
   });

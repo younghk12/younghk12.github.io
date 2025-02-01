@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="cssReset.css">
     <!-- Styling for the site -->
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script src="customSlider.js"></script>
 </head>
 <body>
@@ -27,18 +27,24 @@
                 <img  src="files/Vector.svg" style="width: 100px;" alt="Henry Young">
             </div>
             
-            <div class="navButtons">
+            <button class="hbmenu button" aria-expanded="false" data-target="mainMenu">
+                <svg fill="var(--buttonColor)" class="hamburger" viewbox="0 0 100 100" width="100%">
+                    <line class="line top" x1="20" x2="80" y1="35" y2="35" stroke="black" stroke-width="10" stroke-linecap="round"></line>
+                    <line class="line bottom" x1="20" x2="80" y1="65" y2="65" stroke="black" stroke-width="10" stroke-linecap="round"></line>
+                </svg>
+            </button>
+
+            <div class="navButtons expandable" id="mainMenu" aria-expanded="false">
+                <a class="navButton dropdownButton button" aria-expanded="false" data-target="works" href="index.html"><h3>Works</h3></a>
+                <a class="navButton" href="bio.html"><h3>Bio</h3></a>
                 <div class="dropdown">
-                    <a class="navButton"  href="index.html"><h3>Works</h3></a>
-                    <div class="dropdownContents">
-                        <a class="navButton" href="uniqloWindow.html"><h3>Uniqlo Display</h3></a>
-                        <a class="navButton" href=""><h3>Archive Occhiali</h3></a>
-                        <a class="navButton" href="masonryLayout.html"><h3>Horizontal Masonry</h3></a>
+                    <a class="navButton dropdownButton button" aria-expanded="false" data-target="moreWorks" href="javascript:void(0)"><h3>More Works+</h3></a>
+                    <div class="dropdownContents expandable" id="moreWorks" aria-expanded="false">
+                        <a class="navButton" href="graphic.html"><h3>Graphic Design</h3></a>
                     </div>
                 </div>
-                <a class="navButton" href="bio.html"><h3>Bio</h3></a>
-                <!-- <a class="navButton" href=""><h3>More Works</h3></a> -->
-                
+                <div>
+                </div>
             </div>
         </div>
     </nav>

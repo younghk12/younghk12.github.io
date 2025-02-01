@@ -6,7 +6,7 @@ h1{
     font-size: 4rem;
     font-weight: 600;
     font-style: normal;
-    margin-top: -20px;
+    margin-top: -1.4rem;
 }
 
 h2{
@@ -123,12 +123,13 @@ footer {
 
 .dropdown {
     width: 100%;
-    flex-direction: column;
+    /* flex-direction: column; */
     /* align-items: flex-end; */
 }
 
 .navBar {
-    top: 10vh;
+    top: 0;
+    padding-top: 10vh;
     position: sticky;
     align-items: stretch;
     display: flex;
@@ -138,14 +139,18 @@ footer {
 
 }
 
+.hbmenu {
+    display: none;
+}
+
 .dropdownContents {
-    display: flex;
+    /* display: flex;    */
     flex-direction: column;
     align-items: center;
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease-out;
-    background-color: rgb(76, 76, 133);
+    /* background-color: rgb(76, 76, 133); */
 }
 
 /* 
@@ -171,13 +176,54 @@ footer {
     align-items: center;
     background-color: none;
     justify-content: flex-end;
+    box-sizing: border-box;
     height: 5rem;
-    margin-bottom: -2px; 
+    /* margin-bottom: -2px;  */
+
+    h3 {
+        text-align: right;
+    }
 }
 
 .navButton:hover {
     background-color: rgb(119, 107, 2);
 }
+
+.dropdownContents {
+    opacity: 0;
+    /* visibility: hidden; */
+    display: block;
+    overflow: hidden;
+    max-height: 0px;
+    
+    box-sizing: border-box;
+    border: 1px solid black;
+
+
+    
+
+    transition: 
+        opacity 0.5s ease 0.5s,
+        max-height 0.5s ease,
+    
+}
+
+
+.dropdownContents[aria-expanded = 'true']{
+    display: block;
+    /* visibility: visible; */
+    opacity: 1;
+    max-height: 20px;
+    margin: 0 0 5px 5px;
+    border: 1px solid black;
+ 
+
+
+    transition: 
+        max-height 0.5s ease 0.5s,
+        opacity 0.5s ease,
+
+} 
 
 
 
@@ -185,7 +231,9 @@ footer {
 
 main {
     padding-top: 10vh;
-    overflow: hidden;
+    min-width: 0;
+    max-width: 1250px;
+    /* overflow: hidden; */
 
 }
 
@@ -234,7 +282,30 @@ main {
 
 
 
+/* GALLERY SPECIFIC */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; 
+    overflow: visible;
+}
 
+.gallery-item {
+    flex-grow: 1; 
+    box-sizing: border-box;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Optional: zoom effect on hover */
+}
+
+iframe {
+    /* width: auto; */
+}
 
 
 
@@ -260,8 +331,9 @@ li {
 }
 
 .projectContainer .imgContainer{
-    width: 100%;
+    width: auto;
     display: flex;
+    flex: 1 1 auto;
     flex-wrap: wrap;
     margin-bottom: 3rem;
 }
@@ -274,6 +346,7 @@ li {
 
 a img {
     width: 100%;
+    height: 100%;
     object-fit:cover;
 }
 
@@ -282,6 +355,16 @@ a img {
     left: 0;
     bottom: 0;
     background-color: #00000068;
+
+}
+
+.imgContainer a .overlay{
+    opacity: 0;    
+    transition: opacity 0.3s ease-out;
+}
+
+.imgContainer a:hover .overlay{
+    opacity: 1;
 }
 
 .overlay p{
@@ -317,6 +400,22 @@ video {
 
 
 
+.iframe-container {
+    display: flex;
+  }
+  
+  iframe {
+    border: none;
+    width: 65%;
+    height: 650px; /* Adjust as needed */
+  }
+  
+  iframe:last-child {
+    width: 34%;
+  }
+
+
+
 /* Bio Page */
 
 .bio{
@@ -344,39 +443,170 @@ video {
 
     body {
         display: block;
+        margin: 0;
     }
 
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-color: #d9d4d4;
+
+    }
+
+    
     .navBar {
+        padding: 0;
+        margin-top: 20px;
+        width: 100%;
         flex-direction: row;
         justify-content: space-between;
-        width: 100%;
-        align-items: center;
+        align-items: stretch;
+        box-sizing: border-box;
+        position: relative;
+        top: 0;
     }
 
-    .navButtons {
+    .hbmenu {
         display: flex;
-        /* gap: 5vw; */
-        width: 30vw;
-        /* background-color: orangered; */
-        /* align-items: flex-end; */
+        width: 43.5px;
+        height: 100%;
+        border: none;
+        /* box-sizing: border-box; */
+        /* aspect-ratio: 1 / 1; */
+        background-color:rgba(0, 0, 0, 0);
+        padding: 0;
     }
 
+    .hamburger {
+
+    }
+
+    .hbmenu .line {
+        transform: translateY(0);
+        transform-origin: center;
+        transition: 
+            transform 0.5s ease 0.5s,
+            rotate 0.5s ease ;
+    }
+
+    .hbmenu[aria-expanded = 'true']{
+
+        .line {
+            transform: translateY(0);
+            transition: 
+                transform 0.5s ease,
+                rotate 0.5s ease 0.5s;
+        }
+        .top  {
+            transform: translateY(15px);
+            rotate: 45deg;
+        }
+        .bottom  {
+            transform: translateY(-15px);
+            rotate: -45deg;
+        }
+    } 
+
+    
+    .navButtons {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        max-height: 0px;
+        background-color: #d9d4d4e7;
+        border: 1px solid black;
+        position: absolute;
+        right: 0;
+        top: 100%;
+
+        transition: 
+            opacity 0.5s ease 0.5s,
+            max-height 0.5s ease 
+        ;
+    }
+
+
+    .navButtons[aria-expanded = 'true'] {
+        opacity: 1;
+        max-height: 20px;
+
+        transition: 
+            max-height 0.5s ease 0.5s,
+            opacity 0.5s ease;
+    }
+
+   
     .dropdown {
-        flex: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
     }
 
     .navButton {
-        justify-content: center;
-        font-size: 1.1rem;
-        flex: 1;
+        /* display: none; */
+
+        /* min-width: 90px; */
+        padding: 1rem 2rem;
+
+        height: 100%;
+        /* padding: 0 2rem; */
     }
+
+    
+
+
 
     .dropdownContents {
-        display: none;
+        opacity: 0;
+        /* visibility: hidden; */
+        display: block;
+        overflow: hidden;
+        max-height: 0px;
+        
+        box-sizing: border-box;
+        margin: 0 0 5px 5px;
+
+
+        
+
+        transition: 
+            opacity 0.5s ease 0.5s,
+            max-height 0.5s ease,
+        
+            margin 0.5s ease;
     }
 
-    .main {
-        width: 100%;
+
+    .dropdownContents[aria-expanded = 'true']{
+        display: block;
+        /* visibility: visible; */
+        opacity: 1;
+        max-height: 20px;
+        margin: 0 0 5px 5px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        border-right: none;
+
+
+        transition: 
+            max-height 0.5s ease 0.5s,
+            opacity 0.5s ease,
+
+            margin 0.5s ease;
+    } 
+
+    main {
+        padding-top: 5vh;
+
+        width: auto;
+        margin: 0vh 5vw;
+
+    }
+
+    .graphic {
+        padding-top: 4rem;
     }
 
 }
@@ -406,6 +636,7 @@ video {
 
     h1 {
         font-size: 2.5rem;
+        margin-top: -0.8rem;
     }
 
     h2 {
@@ -417,7 +648,6 @@ video {
     }
 
     .projectContainer{
-        
 
         h1, h2, h3 {
             margin: 0 8vw;
@@ -455,42 +685,15 @@ video {
 
     
 
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        background-color: #d9d4d4;
-
-    }
-
-    .navBar {
-        padding-top: 20px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: stretch;
-        box-sizing: border-box;
-    }
-
-    .navButtons {
-        min-width: 180px;
-        /* width: 100%; */
-        /* flex: 0; */
-    }
-
-    .navButton {
-        /* min-width: 90px; */
-        height: 100%;
-        /* padding: 0 2rem; */
+    .navButton:hover{
+        background: none;
     }
 
     
-
     .title {
-        /* display: none; */
         position: relative;
-        padding: 7vh 8vw;
+        padding: 6vh 8vw;
         scroll-snap-align: start;
-        z-index: 20;    
     }
 
     .projectCard {
@@ -540,7 +743,12 @@ video {
     }
 
     .overlay{
-        display: none;
+        /* display: none; */
+
+        p {
+            font-size: 0.75rem;
+            margin: 0;
+        }
     }
 
     .listContainer{
@@ -566,18 +774,47 @@ video {
 
     .bio {
         padding-top: 20px;
-
-        
     }
+
+    .gallery {
+        display: block;
+        flex-wrap: wrap; 
+        overflow: visible;
+    }
+    
+    .gallery-item {
+        width: 100%;
+    }
+    
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;}
+    
+    .gallery-item:hover img {
+        transform: scale(1.1); /* Optional: zoom effect on hover */
+    }
+    
+    .iframe-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+    
+      iframe {
+        width: 100%;
+        height: 40vh;
+      }
+
+      iframe:last-child{
+        height: 100vh;
+        width: 40vh;
+      }
+    
+
+
+
+
 }
-
-
-
-
-
-
-
-
-
 
 
