@@ -458,7 +458,8 @@ video {
     .navBar {
         padding: 0;
         margin-top: 20px;
-        width: 100%;
+        margin-left: 10px;
+        width: auto;
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
@@ -632,6 +633,7 @@ video {
         height: calc(100dvh - 64px);
         overflow-y: scroll;
         scroll-snap-type: y mandatory;
+        margin: 0;
     }
 
     h1 {
@@ -773,7 +775,13 @@ video {
     }
 
     .bio {
-        padding-top: 20px;
+        padding: 0 10px;
+
+        p {
+            padding-top: 20px;
+        }
+
+
     }
 
     .gallery {
