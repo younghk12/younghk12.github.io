@@ -14,6 +14,7 @@ TODO:
 
     O. 
 
+<h1 >is a product designer who bridges disciplines to critically address big picture design challenges</h1>
 
 .navButton {
     text-decoration: none;

@@ -1,5 +1,6 @@
 /* TEXT STYLES */
 
+
 h1{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
@@ -316,13 +317,12 @@ li {
 .projectContainer .imgContainer{
     width: auto;
     display: flex;
-    flex: 1 1 auto;
     flex-wrap: wrap;
     margin-bottom: 3rem;
 }
 
 .imgContainer a{
-    flex: 1 0 48%;
+    flex: 1 0 250px;
     position: relative; /* Establish a positioning context */
     display: inline-block; /* Adjust based on layout needs */
 }
@@ -385,18 +385,25 @@ video {
 
 .iframe-container {
     display: flex;
+    height: 650px;
+  }
+
+  .iframe-container iframe {
+    flex: 1 1 auto;
+  }
+
+  .iframe-container.twoIframes iframe:first-child{
+    flex: 1 1 64%;
+  }
+  
+  .iframe-container.twoIframes iframe:last-child{
+    flex: 1 1 auto;
   }
   
   iframe {
     border: none;
-    width: 65%;
-    height: 650px; /* Adjust as needed */
   }
   
-  iframe:last-child {
-    width: 34%;
-  }
-
 
 
 /* Bio Page */
