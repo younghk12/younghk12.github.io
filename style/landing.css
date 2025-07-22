@@ -149,14 +149,24 @@ main {
 
     
     .projectButton {
-        display: inline-flex;
+        display: none;
+        /* display: inline-flex;
         background-color: white;
-        color: #232323;
-        padding: 0 2rem;
+        padding: 0 2rem; */
+        color: var(--color-neutral);
+        /* background-color: var(--color-accent); */
+        border: 2px solid var(--color-neutral);
+        border-radius: 10px;
     }
 
+
+
     .projectButton:hover {
-        background-color: #ffffff00;
+        color: var(--color-neutral);
+        /* background-color: var(--color-accent); */
+        border: 2px solid var(--color-neutral);
+        border-radius: 10px;
+        background-color: black;
     }
 
 }
