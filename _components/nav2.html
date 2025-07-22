@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<div class="navBar">
+            
+    <div class="logo">
+        <img  src="../files/Vector.svg" style="width: 100px;" alt="Henry Young">
+    </div>
+    
+    <button class="hbmenu button" aria-expanded="false" data-target="mainMenu">
+        <svg fill="var(--buttonColor)" class="hamburger" viewbox="0 0 100 100" width="100%">
+            <line class="line top" x1="20" x2="80" y1="35" y2="35" stroke="black" stroke-width="10" stroke-linecap="round"></line>
+            <line class="line bottom" x1="20" x2="80" y1="65" y2="65" stroke="black" stroke-width="10" stroke-linecap="round"></line>
+        </svg>
+    </button>
+
+    <div class="navButtons expandable" id="mainMenu" aria-expanded="false">
+        <a class="navButton dropdownButton button" aria-expanded="false" data-target="works" href="/pages/ux.html"><h3>UX</h3></a>
+        <a class="navButton dropdownButton button" aria-expanded="false" data-target="works" href="/pages/webDev.html"><h3>Web Dev</h3></a>
+        <a class="navButton dropdownButton button" aria-expanded="false" data-target="works" href="/pages/graphic.html"><h3>Graphic</h3></a>
+        <a class="navButton" href="bio.html"><h3>Bio</h3></a>
+        <div class="dropdown">
+            <a class="navButton dropdownButton button" aria-expanded="false" data-target="moreWorks" href="javascript:void(0)"><h3>More Works+</h3></a>
+            <div class="dropdownContents expandable" id="moreWorks" aria-expanded="false">
+                <a class="navButton" href="graphic.html"><h3>Experiments</h3></a>
+                <a class="navButton" href="graphic.html"><h3>Physical</h3></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</html>

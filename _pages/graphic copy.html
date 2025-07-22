@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design</title>
+    <link rel="icon" type="image/x-icon" href="files/favicon.ico">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Plus+Jakarta+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
+    <!-- Eric Meyers css reset -->
+    <link rel="stylesheet" href="cssReset.css">
+    <!-- Styling for the site -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="gallery.js" defer></script>
+</head>
+<body>
+    
+    <nav>
+        <div class="navBar">
+            
+            <div class="logo">
+                <img  src="files/Vector.svg" style="width: 100px;" alt="Henry Young">
+            </div>
+            
+            <button class="hbmenu button" aria-expanded="false" data-target="mainMenu">
+                <svg fill="var(--buttonColor)" class="hamburger" viewbox="0 0 100 100" width="100%">
+                    <line class="line top" x1="20" x2="80" y1="35" y2="35" stroke="black" stroke-width="10" stroke-linecap="round"></line>
+                    <line class="line bottom" x1="20" x2="80" y1="65" y2="65" stroke="black" stroke-width="10" stroke-linecap="round"></line>
+                </svg>
+            </button>
+
+            <div class="navButtons expandable" id="mainMenu" aria-expanded="false">
+                <a class="navButton dropdownButton button" aria-expanded="false" data-target="works" href="index.html"><h3>Works</h3></a>
+                <a class="navButton" href="bio.html"><h3>Bio</h3></a>
+                <div class="dropdown">
+                    <a class="navButton dropdownButton button" aria-expanded="false" data-target="moreWorks" href="javascript:void(0)"><h3>More Works+</h3></a>
+                    <div class="dropdownContents expandable" id="moreWorks" aria-expanded="false">
+                        <a class="navButton" href="graphic.html"><h3>Graphic Design</h3></a>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <main class="graphic">
+        <h1>Photoshop</h1>
+        <p>My photoshop works use graphic effects for impact, especially those that are jarring, liminal, grotesque, or sublime. In terms of imagery, they tend to focus on urbanism, identity, and modernity. </p>
+
+        <div  class="gallery" style="width: 100%;">
+            <div class="gallery-item"><img src="files/photoshop/blur.jpg" alt="Description of image 1"></div>
+            <div class="gallery-item"><img src="files/photoshop/grain.jpg" alt="Description of image 2"></div>
+            <div class="gallery-item"><img src="files/photoshop/pixel3.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/2dTexture.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/channel1.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/glitch.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/liquify.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/paperCut.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/postCardPres.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/duplication.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/3Dtext.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/mockup.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/project1.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/photoshop/retroAd1.jpg" alt="Description of image 3"></div>
+
+            <!-- Add more images as needed -->
+        </div>
+
+        <footer></footer>
+
+        <h1>Illustrator</h1>
+        <p>This series of illlustrator projects, designed for a fictional company called venice classic car restoration, explores different visual expressions of venice and classic european cars.     </p>
+
+        <div  class="gallery" style="width: 100%;">
+            <div class="gallery-item"><img src="files/illustrator/posterMockup.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/illustrator/briefMockup.jpg" alt="Description of image 1"></div>
+            <div class="gallery-item"><img src="files/illustrator/lanyardMockup.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/illustrator/postCard-01.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/illustrator/founderMessage.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/illustrator/duotone-01.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/illustrator/shapeTextText-01.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/illustrator/stamp-01.jpg" alt="Description of image 3"></div>
+            <div class="gallery-item"><img src="files/illustrator/donut-01.jpg" alt="Description of image 3"></div>
+            <!-- <div class="gallery-item"><img src="files/illustrator/connectedOutline-01.jpg" alt="Description of image 2"></div> -->
+            
+            <!-- Add more images as needed -->
+        </div>
+
+        <footer></footer>
+
+        <h1>Figma</h1>
+        <p>My most advanced figma project to date, I created an concert event app called Portland Pop that uses consistent color coding to make artist, album, and venue clear as the user moves through login, browsing, searching, and checkout.</p>
+
+        <div class="iframe-container twoIframes">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);"  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fdx8Befd4n8e9PUrEdMOnYz%2FportlandPop%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DJtOXc2jXw3E0tHoa-1" allowfullscreen></iframe>
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);"  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fdx8Befd4n8e9PUrEdMOnYz%2FportlandPop%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D125-339%26viewport%3D535%252C371%252C0.4%26t%3DL5udpfsunSYd5BZm-1%26scaling%3Dscale-down%26starting-point-node-id%3D125%253A339%26mode%3Ddesign" allowfullscreen></iframe>
+        </div>
+        
+
+        <footer></footer>
+        <footer></footer>
+    </main>
+</body>
+</html>

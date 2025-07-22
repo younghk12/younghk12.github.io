@@ -1,0 +1,483 @@
+/* 
+    TO DO
+
+    High Priority:
+    X- explore fonts
+    X- Main screen with justification / hook
+    - Add one more?
+    - fix photo collage
+    - fix wording
+    - remove multnomah stickers / other unfinished
+
+    Low Priority:
+    - make better photo collage logic
+    - make carousel for images
+    - figure out links that jump to section
+    - photos to put next to figma imbeds
+    - clean up projects, add inspiration/process images
+    - screen sizes
+    
+    PROJECT GOALS
+    - add album interaction
+    - make processing final object oriented
+    - expand on digital drawing
+    - finish ray tracer to include images
+    - images for archive occhiali
+    - improve uniqlo photoshop
+    - make data vis smaller
+ */
+
+html {
+    background-color: #d9d4d4;
+    font-family: sans-serif;
+}
+
+
+
+/* TEXT STYLES */
+h1 {
+    font-size: 4rem;
+    display: inline-block;
+    margin-bottom: -7px;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1rem;
+}
+.inspiration h2 {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: white;
+}
+.project p {
+    text-align: justify;
+    margin: auto; 
+    padding: 0px 10%;
+    padding-bottom: 50px;    /* text-align: justify; */
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+/* PAGE STRUCTURAL ELEMENTS */
+.container {
+    display: flex;
+    margin-right: 0;
+    margin-left: auto;    
+} 
+
+
+
+/* HEADER AND HEADER COMPONENTS */
+.navBar {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 60px;
+    margin-left: 80px;
+    width: 100px;
+}
+
+.headerNoBio {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0; /* Set to the top of the page */
+    box-sizing: border-box;
+    /* padding: 0px 36px; */
+    padding-bottom: 30px;
+    margin-bottom: 120px;
+    /* max-height: 69px; */
+    transition: max-height 1s ease-out;
+    overflow: hidden;
+}
+
+.headerBio {
+    max-height: 800px;
+
+}
+
+
+
+
+.bio {
+    /* width: 70%;
+    margin-top: 2px; */
+}
+
+.image-container {
+    display: flex;
+    align-items: end;
+}
+
+
+.image-container .overlay {
+    visibility: hidden;
+    opacity: 0; /* Make overlay transparent */
+    margin-left: 20px; /* Distance from the image */
+    white-space: nowrap; /* Prevent text wrapping */
+    transition: visibility 0s linear 0.2s, opacity 0.2s linear; /* Delay hiding visibility, animate opacity */
+    padding-bottom: 7px;
+}
+
+.image-container:hover .overlay {
+    visibility: visible;
+    opacity: 1; /* Fully show overlay */
+    transition: opacity 0.3s linear; /* Only animate opacity */
+}
+
+
+
+
+
+
+.dropdown {
+    flex-direction: column;
+    /* align-items: flex-end; */
+
+}
+
+.dropdownContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+    background-color: rgb(76, 76, 133);
+}
+
+
+.dropdown:hover .dropdownContents {
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.navButton {
+    text-decoration: none;
+    color: black;
+    font-family: "DM Mono", monospace;
+    font-size: 15px;
+    display: flex;
+    text-align: right;
+    align-items: center;
+    background-color: none;
+    width: 100%;
+    justify-content: right;
+    height: 69px;
+
+    /* padding: 0px 27px; */
+    /* text-align: right; */
+    /* border-style: outset; */
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    margin-bottom: -2px; /* Overlaps with the border of the next box */
+    /* margin-left: -2px; */
+}
+
+.navButton:hover {
+    background-color: rgb(119, 107, 2);
+}
+
+
+
+/* MAIN AND MAIN COMPONENTS */
+/* main {
+    outline: 1px solid black;
+    width: 60%;
+    margin: auto;
+    position: sticky;
+} */
+main:hover {
+    background-color: #d9d4d4;
+
+}
+
+.mainNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.mainButton {
+    background-color: none;
+    outline: 1px solid black;
+    color: black;
+    width: 33.4%;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.selected {
+    background-color: white;
+}
+
+.unselected:hover {
+    background-color: #c1b8b8;
+}
+
+/* LANDING PAGE SPECIFIC */
+.hero {
+    height: 85vh;
+    background-color: green;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.projects {
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.projectCard {
+    height: 75vh;
+    width: 80%;
+    justify-self: center;
+    background-color: green;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10vh;
+    overflow: hidden;
+}
+
+.projectCard .image-container{
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.projectCard img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.projectContainer {
+    padding: 0 15vw;
+}
+
+.projectContainer h1{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 60px;
+    font-weight: 600;
+    font-style: normal;
+    padding-bottom: 40px;
+}
+
+.projectContainer h2{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 32px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.projectContainer h3{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 22px;
+    font-style: normal;    
+    padding-bottom: 40px;
+}
+
+
+
+.projectContainer p{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 20;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 20px;
+}
+
+.projectContainer ul{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 20;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 20px;
+    list-style-type: disc;
+}
+
+.projectContainer span{
+    font-weight: 700;
+}
+
+.listContainer {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-between;
+}
+
+ul {
+    flex: 1;
+}
+
+li {
+    overflow-wrap: break-word;
+}
+
+.projectContainer .imgContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+.imgContainer a{
+    flex: 1 0 48%;
+    position: relative; /* Establish a positioning context */
+    display: inline-block; /* Adjust based on layout needs */
+}
+
+a img {
+    object-fit:cover;
+}
+
+.imgContainer .overlay{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #00000068;
+}
+
+.overlay p{
+    color: #e3e3e3;
+    padding: 0;
+}
+
+.text-container{
+    padding: 6vh 5vw 8vh;
+  
+    overflow: visible;
+    min-height: 100px;
+    flex: 1;
+    background-color: #d9d4d4;
+}
+
+.text-container h1{
+    position: relative;
+    padding-bottom: 5vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 3rem;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.text-container p{
+    position: relative;
+    font-family: "DM Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+.text-container a:hover h3{
+    color: white;
+    background-color: #232323;
+ 
+}
+
+
+/* SOFTWARE OVERVIEW SPECIFIC */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.gallery-item {
+    flex-grow: 1; 
+    box-sizing: border-box;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Optional: zoom effect on hover */
+}
+
+
+/* PROJECT AND CONTENTS */
+.projects {
+    margin-bottom: 100px;
+}
+
+.project {
+    min-height: 200px;
+    width: 110%;
+    position: relative;
+    margin: 0px -5%;
+    margin-bottom: 80px;
+}
+
+.projectTitle {
+    margin-bottom: 20px;
+}
+.projectTitle h1 {
+    margin-right: 20px;
+}
+
+.softwareBox {
+    color: white;
+    background-color: #6b4936;
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.inspiration {
+    background-color: white;
+    outline: 2px solid black;
+    margin-bottom: 50px;
+}
+
+.product {
+    background-color: black;
+    padding: 2px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+video {
+    width: 100%;
+    height: auto;
+}
+.imgRow {
+    display: flex;
+}
+
+iframe {
+    width: 100%;
+    height: 600px;
+    box-sizing: border-box;
+
+}
+
+footer {
+    background-color: #CBC1C1;
+    min-height: 100px;
+    /* position: sticky;
+    bottom: 0px;
+    z-index: -1; Place the element behind others */
+}

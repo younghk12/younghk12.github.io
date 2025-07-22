@@ -1,42 +1,37 @@
 TODO:
 
-    X. finish writing for archive occhiali and input
+    X. Nav in separate page
 
-    O. make profile more personal
+    X. Rewrite Nav
 
-    O. document masonry
+    X. Separate css into separate files
 
-    O. Media queries for projects
+    X. hamburger error messages
+    
+    O. Use css variables to organize spacing etc
 
-    O. Dropdown menu / hamburger
+    X. Relink files to correct pages
 
-    O. Alignment
+    O. Clean up project css
 
     O. 
 
-<h1 >is a product designer who bridges disciplines to critically address big picture design challenges</h1>
+    O. 
 
-.navButton {
-    text-decoration: none;
-    color: black;
-    font-family: "DM Mono", monospace;
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-    background-color: none;
-    justify-content: flex-end;
-    height: 5rem;
-    margin-bottom: -2px; 
-}
+    O. 
 
-.navBar {
-    top: 10vh;
-    position: sticky;
-    align-items: stretch;
-    display: flex;
-    flex-direction: column;
-    width: 100px;
-    overflow: hidden;
-    box-sizing: border-box;
+    O. 
 
-}
+    O. Alignment
+
+    O. Fix main page alignment on mobile
+
+    O. Are.na, linkedin, instagram, dribble?, codepen?, p5.js, email, 
+    
+    O. Full body profile picture with irregular text wrapping
+    
+    O.
+    
+    O.
+    
+    O.

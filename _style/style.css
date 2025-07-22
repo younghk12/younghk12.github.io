@@ -1,0 +1,171 @@
+:root {
+    --color-highlight: rgb(119, 107, 2);
+    --color-accent: black;
+    --color-neutral: #d9d4d4;
+
+    --border: 1px solid var(--accent-color);
+    --border-radius: 10px;
+
+    --font-size-large: 4rem;
+
+    --spacing-large: -1.4rem;
+
+    /* etc etc */
+}
+
+
+/* TEXT STYLES */
+
+h1{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 4rem;
+    font-weight: 600;
+    font-style: normal;
+    margin-top: -1.4rem;
+}
+
+h2{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 3rem;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 3rem;
+}
+
+p{
+    font-family: "DM Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+
+
+
+
+
+/* UNIVERAL STRUCTURAL ELEMENTS */
+
+html {
+    background-color: var(--color-neutral);
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    gap: 5vw;
+    margin: 0vh 5vw;
+    min-height: 400px; 
+
+} 
+
+
+footer {
+    min-height: 60px;
+    bottom: 0px;
+} 
+
+
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.primary {
+    transition-delay: 0.3s;
+}
+
+.secondary {
+    transition-delay: 0.6s;
+}
+
+
+
+
+
+
+
+
+/* Mobile Structual Elements */
+
+@media (max-width: 1000px){
+
+    body {
+        display: block;
+        margin: 0;
+    }
+
+
+    main {
+        padding-top: 5vh;
+
+        width: auto;
+        margin: 0vh 5vw;
+
+    }
+
+    .graphic {
+        padding-top: 4rem;
+    }
+
+}
+
+@media (max-width: 700px){
+
+    html, body {
+        overflow: hidden;
+        /* height: 100%; */
+    }
+
+    body {
+        /* display: block; */
+        /* overflow: visible; */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    
+
+    main {
+        padding-top: 0;
+        height: calc(100dvh - 64px);
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-top: -0.8rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+
+
+
+}
+
+
