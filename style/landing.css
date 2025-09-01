@@ -5,13 +5,14 @@ main {
     min-width: 0;
     max-width: 1250px;
     /* overflow: hidden; */
-
 }
 
-.title {
-    padding: 0 0 8vh 0;
 
+body {
+    height: 100vh;
 }
+
+
 
 .link {
     a{
@@ -23,150 +24,62 @@ main {
     }
 }
 
-.projectCard {
-    height: 75vh;
+
+
+.landing {
     width: 100%;
-    justify-self: center;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 10vh;
-
-    /* overflow: hidden; */
-
-    .image-container{
-        /* flex-grow: 0;
-        flex-shrink: 0; */
-        flex: 1 1 0;
-        img {
-            justify-self: end;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-        
-    }
-
-    .text-container{
-        flex: 0 0 50%;
-        padding: 6vh 5vw 8vh;
-        overflow: visible;
-        min-height: 100px;
-        box-sizing: border-box;
-        /* flex: 1; */
-        /* background-color: #d9d4d4; */
-    }
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;       
+  margin: 0;
+  padding: 0 5vw;               
+  min-height: 100vh;            
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-
-
-.right{
-        text-align: right;
-        justify-content: flex-end;
-    }
-
-
-.projectButton {
-    text-decoration: none;
-    color: black;
-    font-family: "DM Mono", monospace;
-    font-size: 1.3rem;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    width: 15rem;
-    height: 5rem;
-    margin-bottom: -2px; 
-    text-wrap: nowrap;
-    box-sizing: border-box;
+main {
+  display: block;
+  flex: 1 1 auto;                
+  max-width: 50%;                
+  gap: 2rem;
+  /* min-width: max-content; */
+  min-width: 560px;
+  z-index: 10;
 }
 
-.projectButton:hover {
-    color: black;
-    border: 2px solid black;
-    border-radius: 10px;
-    text-decoration: underline;
+.three-container {
+    order: 2;
+    width: 1000px;
+  height: 100%;
+  position: relative;            
+  /* display: flex; */
+  /* justify-content: center;  */
+  align-items: center;           
+  /* border: 2px solid hotpink; */
 }
 
-.pills {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-    gap: 4px;
-    p {
-        border-radius: 10px;
-        background-color: black;
-        color: #d9d4d4;
-        padding: 10px 10px;
-        margin-bottom: 0px;
-    }
+.three-container canvas {
+    position: absolute;
+    width: 2000px;
+    left: 480px;
+    translate: -50% 0;
+    width: 1400px;
+    height: 100%;
+  /* border: 2px solid lime; */
+  /* z-index: -1; */
 }
 
+.note {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(100%, -100%);
+    z-index: 10;
+}
 
 @media (max-width: 700px){
 
 
-    .title {
-        position: relative;
-        padding: 6vh 8vw;
-        scroll-snap-align: start;
-    }
-
-    .projectCard {
-        position: relative;
-        height: calc(100dvh - 64px);
-        width: 100vw;
-        margin-bottom: 0;
-        scroll-snap-align: start;
-        scroll-snap-type: always;
-        overflow: hidden;
-    }
-
-    .projectCard .image-container{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .image-container img {
-        object-fit: cover;
-        flex: 1;
-    }
-
-    .projectCard .text-container{
-        position: absolute;
-        bottom: 0;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 100%);
-        color: white;
-        width: 100%;
-        z-index: 2;
-        box-sizing: border-box;
-        padding-top: 10vh;
-    }
-
-    
-
-    
-    .projectButton {
-        display: none;
-        /* display: inline-flex;
-        background-color: white;
-        padding: 0 2rem; */
-        color: var(--color-neutral);
-        /* background-color: var(--color-accent); */
-        border: 2px solid var(--color-neutral);
-        border-radius: 10px;
-    }
-
-
-
-    .projectButton:hover {
-        color: var(--color-neutral);
-        /* background-color: var(--color-accent); */
-        border: 2px solid var(--color-neutral);
-        border-radius: 10px;
-        background-color: black;
-    }
 
 }

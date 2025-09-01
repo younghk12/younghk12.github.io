@@ -14,9 +14,9 @@ TODO:
 
     O. Clean up project css
 
-    O. 
+    O. Make h1 and h2 the same css, make h3 into p and make two classes bulleted and unbulleted for unordered lists
 
-    O. 
+    O. Few different types of image galleries, some flex and some w set height/aspect ratio for scrolling like ux
 
     O. 
 

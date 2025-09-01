@@ -1,0 +1,29 @@
+{
+  "name": "younghk12.github.io",
+  "version": "1.0.0",
+  "description": "Senior Thesis and Portfolio",
+  "main": "index.js",
+  "devDependencies": {
+    "vite": "^7.1.3"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/younghk12/younghk12.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/younghk12/younghk12.github.io/issues"
+  },
+  "homepage": "https://github.com/younghk12/younghk12.github.io#readme",
+  "dependencies": {
+    "three": "^0.179.1"
+  }
+}

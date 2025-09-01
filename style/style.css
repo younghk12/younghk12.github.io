@@ -8,7 +8,10 @@
 
     --font-size-large: 4rem;
 
-    --spacing-large: -1.4rem;
+    --spacing-s: 1rem;
+    --spacing-m: 3rem;
+    --spacing-l: 6rem;
+    
 
     /* etc etc */
 }

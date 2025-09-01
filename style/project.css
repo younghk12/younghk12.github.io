@@ -6,105 +6,206 @@ main {
 
 }
 
+.section {
+        padding-bottom: var(--spacing-l);
+        :last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+
+
 .projectContainer{
 
-    h1 {
+    h1, h2, h3 {
         font-family: "Inter", sans-serif;
         font-weight: 300;
     }
 
-    p, ul, code{
+    ul, code{
         font-family: "IBM Plex Mono", monospace;
-        padding: 0;
     }
 
-    h2, h3{
+    p {
         font-family: "Inter", sans-serif;
         font-optical-sizing: auto;
-        padding: 0;
     }
 
-    p, ul, code{
+    ul, code{
         font-size: 1rem;
         font-weight: 400;
         margin-left: 6vw;
-        margin-bottom: 3rem;
+        margin-bottom: var(--spacing-m);
         line-height: 1.2rem;
+
+        b {
+            display: inline-block;
+            margin-bottom: 0.7rem;
+        }
     }
 
-    h1{
+    h1, h2{
         font-size: 4rem;
         font-weight: 600;
-        font-style: normal;
-        margin-top: 4rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
+        line-height: 4.4rem;
     }
 
-    h2{
+    h2 {
+        margin-bottom: var(--spacing-m);
+    }
+
+
+    h3 {
         font-size: 2rem;
         font-weight: 600;
-        margin-top: 4rem;        
-        margin-bottom: 1.5rem;
+        line-height: 2.2rem;
+        margin-bottom: 2rem;
     }
 
-    h3{
+    p {
         font-size: 1.2rem;
         font-weight: 300;
-        margin-bottom: 3rem;
+        margin-bottom: var(--spacing-m);
         line-height: 1.5rem;
     }
 
-    h3, p {
+    p, ul {
         max-width: 800px;
 
     }
 
-    ul{
+    .bullet {
         list-style-type: disc;
     }
 
+    .noBullet {
+        list-style-type: none;
+    }
+
     li{
-        margin-top: .5rem;
+        margin-bottom: .7rem;
     }        
 
-    span{
+    b {
         font-weight: 700;
-        line-height: 1.8rem;
+        /* line-height: 1.8rem; */
     }
 
     code {
         word-break: break-all;
     }
 
-    .section {
+    
 
+
+    /* IMAGES */
+
+    .hero {
+        width: auto;
+        margin-bottom: 4rem;
+        
+        img {
+            width: 100%;
+        }
     }
+    
+    /* gallery */
 
-
-    /* GALLERY SPECIFIC */
     .gallery {
         display: flex;
         flex-wrap: wrap; 
         overflow: visible;
+        margin-bottom: calc(var(--spacing-m) + 1rem);
     }
+
+    .gap {
+        gap: 20px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .gallery img:hover {
+            transform: scale(1.1); /* Optional: zoom effect on hover */
+        }
+    
 
     .gallery-item {
         flex-grow: 1; 
         box-sizing: border-box;
     }
 
-    .gallery-item img {
+    /* .gallery-item img {
         width: 100%;
         height: auto;
-        display: block;}
+        display: block;} */
 
     .gallery-item:hover img {
         transform: scale(1.1); /* Optional: zoom effect on hover */
     }
 
-    iframe {
-        /* width: auto; */
+    /* imgContainer */
+
+    .imgContainer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 20px;
+        /* padding-top: 1rem; */
+        margin-bottom: calc(var(--spacing-m) + 1rem);
+
+        
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
     }
+
+   .flex{
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        
+        a{
+            flex: 1 0 250px;
+            position: relative;
+            display: inline-block;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+
+    /* 
+    .contain {
+        object-fit: contain;
+        object-position: top;
+    } */
+
+
+    .scroll {
+        aspect-ratio: 5/3;
+        overflow-y: scroll;
+
+        img {
+            display: block;
+            object-position: top;
+            width: 100%;
+            height: auto !important;
+        }
+    }
+
+   
+
 
 
 
@@ -125,36 +226,7 @@ main {
         overflow-wrap: break-word;
     }
 
-    .imgContainer{
-        width: auto;
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 3rem;
-        gap: 20px;
-    }
 
-    .imgContainer a{
-        flex: 1 0 250px;
-        position: relative; /* Establish a positioning context */
-        display: inline-block; /* Adjust based on layout needs */
-    }
-
-    a img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .cover {
-
-    }
-
-    .contain {
-        object-fit: contain;
-        object-position: top;
-    }
-
-    .
 
     .imgContainer .overlay{
         position: absolute;
@@ -182,7 +254,7 @@ main {
 
 
     .imgText {
-        display: block;
+        display: flex;
         margin-bottom: 3rem;
         overflow: hidden;
 
@@ -194,11 +266,15 @@ main {
         }
     }
 
-    video {
-        margin: 1rem 0 1rem;
+    imgText > * {
+        flex: 1 1 250px;
     }
 
 
+    video {
+        width: 100%;
+        margin-bottom: var(--spacing-m);
+    }
 
     .iframe-container {
         display: flex;
@@ -223,13 +299,9 @@ main {
 
 
 
-
-
-
-
-
-
 }
+
+
 
 
 
@@ -292,9 +364,10 @@ main {
         }
     
         .imgText {
+            display: block;
             .imgContainer{
-                display: block;
-                float: none;
+                /* display: block; */
+                /* float: none; */
                 width: 100%;
                 margin-bottom: 3rem;
             }
@@ -310,7 +383,7 @@ main {
     
         }
     
-        .gallery {
+        /* .gallery {
             display: block;
             flex-wrap: wrap; 
             overflow: visible;
@@ -326,8 +399,48 @@ main {
             display: block;}
         
         .gallery-item:hover img {
-            transform: scale(1.1); /* Optional: zoom effect on hover */
+            transform: scale(1.1); 
+        } */
+
+        /* .gallery {
+            display: flex;
+            gap: 16px;
+            align-items: stretch; 
+            flex-wrap: nowrap;    
         }
+
+            
+        .gallery .gallery-item {
+            display: block;      
+            
+        }
+
+        .gallery .gallery-item img {
+            width: 100%;
+            height: 100%;         
+            display: block;
+            object-fit: cover;    
+        } */
+
+        .gallery {
+            display: block;       /* must be flex */
+            flex-wrap: wrap;     /* allow multiple rows */
+            gap: 16px;           /* optional spacing */
+        }
+
+        .gallery > * { /* the direct children: anchors/divs etc */
+            display: block;
+          
+            /* overflow: hidden; */
+        }
+
+            .gallery > * img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover; /* or remove if you don't want cropping */
+        }
+
         
         .iframe-container {
             flex-direction: column;
