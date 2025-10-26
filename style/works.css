@@ -29,7 +29,6 @@ main {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 10vh;
-
     /* overflow: hidden; */
 
     .image-container{
@@ -42,9 +41,7 @@ main {
             width: 100%;
             object-fit: cover;
         }
-        
     }
-
     .text-container{
         flex: 0 0 50%;
         padding: 6vh 5vw 8vh;
@@ -57,10 +54,10 @@ main {
 }
 
 
-
 .right{
         text-align: right;
         justify-content: flex-end;
+        flex-direction: row-reverse;
     }
 
 .right * {

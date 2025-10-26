@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Works</title>
-    <link rel="icon" type="image/x-icon" href="files/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/files/favicon.ico">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/style/nav.css">
     <link rel="stylesheet" href="/style/landing.css">
     <!-- Scripts -->
-    <script type="importmap">
+    <!-- <script type="importmap">
         {
             "imports": {
                 "three": "../build/three.webgpu.js",
@@ -28,9 +28,17 @@
                 "three/addons/": "./jsm/"
             }
         }
+    </script> -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+            }
+        }
     </script>
     <script type="module" src="/scripts/script.js" defer></script>
-    <!-- <script src="/scripts/nav.js" defer></script> -->
+    <script src="/scripts/nav.js" defer></script>
     <!-- <script src="/scripts/customSlider.js" defer></script> -->
 
 
@@ -44,7 +52,7 @@
     <main >
         
         
-        <img src="/files/Vector.svg" style="width: 100px; padding-bottom: 3rem;" alt="Henry Young">
+        <img src="./files/Vector.svg" style="width: 100px; padding-bottom: 3rem;" alt="Henry Young">
         <div class="title animate-on-scroll primary hidden">
             <h1 >is a designer and programmer promoting creativity in the pnw and beyond</h1>
             <!--is a designer who enjoys tackling a broad spectrum of problems with mutifaceted approaches-->
@@ -53,8 +61,8 @@
         <h1 class="link animate-on-scroll secondary hidden" style="width: max-content;">
             <!-- <a href="/ux/">User Experience</a> -->
             <!-- <a href="/webDev/">Web Development</a> -->
-            <a href="/graphic/">Graphic Design -> </a>
-            <a href="/ux/">User Experience -> </a>
+            <a href="./graphic/">Graphic Design -> </a>
+            <a href="./ux/">User Experience -> </a>
             More coming soon...
         </h1>
 
@@ -72,7 +80,7 @@
 		<script type="module">
 
 			import * as THREE from 'three';
-			import { toonOutlinePass } from 'three/tsl';
+			// import { toonOutlinePass } from 'three/tsl';
             import { MathUtils } from 'three';
 
 			
@@ -186,6 +194,7 @@
 				controls.minDistance = 200;
 				controls.maxDistance = 2000;
 				controls.enablePan = false;
+                controls.enableZoom = false;
 				controls.enableDamping = true; // enable smooth inertia
 				// controls.dampingFactor = 0.05; // lower = more gradual slowdown
 				// controls.rotateSpeed = 0.8;    // optional, adjust rotation speed

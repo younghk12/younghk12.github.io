@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design</title>
+    <link rel="icon" type="image/x-icon" href="/files/favicon.ico">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&family=Plus+Jakarta+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
+    <!-- Eric Meyers css reset -->
+    <link rel="stylesheet" href="/style/cssReset.css">
+    <!-- Styling for the site -->
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/project.css">
+    <link rel="stylesheet" href="/style/nav.css">
+
+    <!-- scripts -->
+    <script src="/scripts/script.js" defer></script>
+    <script src="/scripts/nav.js" defer></script>
+    <script src="/scripts/insertNav.js" defer></script>
+    <script src="/scripts/gallery.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a class="logo" href="/graphic/">
+            <img  src="/files/Vector.svg" style="width: 100px;" alt="Henry Young">
+        </a>
+        
+        <button class="hb-button" data-target="mainMenu" aria-expanded="false">
+            <svg fill="var(--buttonColor)" class="hamburger" viewbox="0 0 100 100" width="100%">
+                <line class="line top" x1="20" x2="80" y1="35" y2="35" stroke="black" stroke-width="10" stroke-linecap="round"></line>
+                <line class="line bottom" x1="20" x2="80" y1="65" y2="65" stroke="black" stroke-width="10" stroke-linecap="round"></line>
+            </svg>
+        </button>
+
+        <ul class="menu outer expandable" id="mainMenu" aria-expanded="false">
+            <li class="menu-item"><a href="/graphic/">Graphic</a></li>
+            <li class="menu-item"><a href="/bio/">Bio</a></li>
+        </ul>
+    </nav>
+
+
+    
+    <main class="projectContainer">
+
+        <div class="hero">
+                <img src="/files/projects/portlandPop/portlandPopCover.jpg" alt="">
+        </div>
+
+        <div class="section animate-on-scroll primary hidden">
+
+            <h1>Portland Pop</h1>
+
+            <p>High fidelity prototype for concert event mobile app. <a href="#solution"><span>Jump to solution-></span></a></p>
+    
+            <ul>
+                <li><b>Role: </b>Sole Designer</li>
+                <li><b>Duration: </b>1 Month</li>
+                <li><b>Completed: </b>May 2022</li>
+                <li><b>Discipline: </b>Prototyping, Design Systems, Interaction Design, Figma</li>
+            </ul>
+            
+        </div>
+
+        <div class="section animate-on-scroll primary hidden">
+            <h2>Process</h2>
+    
+            <p>Portland Pop is a concert‑finding app concept that guides users seamlessly through onboarding, browsing, searching, and checkout. The concept began with a generative prompt that randomized both a logo mascot and the musical genre, pushing me to design a specific yet flexible brand system. </p> 
+            
+            
+        </div>
+        
+        <div class="section animate-on-scroll primary hidden">
+            <div class="gallery">
+                <a href="">
+                    <img src="/files/projects/portlandPop/Brand Identity.png" alt="">
+                </a>
+                <a href="">
+                    <img src="/files/projects/portlandPop/Components.png" alt="">
+                </a>
+            </div>
+            <p>With the user flow and page types prescribed, I concentrated my creative energy on branding and page layout. The app’s personality draws on popular contemporary design trends: pronounced rounded corners, layered transparent elements, and bold blocks of color. Inspired by Barbara Kruger’s and Supreme’s use of italicized Futura Bold, the logo commands attention and alludes to popular culture, while a consistent color‑coding system (primary for artist, secondary for album, outline for venue) reinforces information hierarchy and enhances usability across the entire interface.</p>
+        </div>
+        
+        
+        <div class="section animate-on-scroll primary hidden">
+    
+            <div class="imgContainer flex">
+                    <img src="/files/projects/portlandPop/layouts.png" alt="">
+            </div>
+            <p>To scale efficiently, I built robust, variant‑driven components and auto‑layout frames with thoughtfully configured properties. As the project grew, I optimized my workflow by leveraging ai for micro‑copy generation and Figma plugins like Content Reel and Unsplash for placeholder assets, freeing me to focus on information hierarchy and layout refinement. I also utilized Apple’s open‑source Figma UI kit to implement a share menu, embracing existing best practices and making it feel more realistic.</p> 
+            
+            <p>Lastly, I approached this as a formal project. I developed components with tightly defined parameters so that fellow designers and developers can reuse them without ambiguity. to maximize clarity and minimize the possibility of misuse by other designers and developers. I also included spec annotations for spacing, typography, and color usage, ensuring a smooth transition from design to development.</p>
+            
+            
+        </div>
+        
+        
+        <div class="section animate-on-scroll primary hidden">
+            <h2 id="solution">Solution</h2>
+            
+            <div class="iframe-container twoIframes">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);"  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fdx8Befd4n8e9PUrEdMOnYz%2FportlandPop%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DJtOXc2jXw3E0tHoa-1" allowfullscreen></iframe>
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);"  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fdx8Befd4n8e9PUrEdMOnYz%2FportlandPop%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D125-339%26viewport%3D535%252C371%252C0.4%26t%3DL5udpfsunSYd5BZm-1%26scaling%3Dscale-down%26starting-point-node-id%3D125%253A339%26mode%3Ddesign" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="section animate-on-scroll primary hidden">
+            <h3>Takeaways</h3>
+            <p>This project sharpened my ability to balance creative branding with scalable, developer‑ready systems. I was able to create both a visually distinct app, expressive of a genre's culture, while folling strict UX constraints and documenting with clarity for real-world implementation.</p>
+        </div>
+
+
+        <footer>
+        </footer>
+    </main>
+
+
+
+        
+    
+    
+</body>
+</html>
