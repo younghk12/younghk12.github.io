@@ -111,7 +111,8 @@ body {
 body {
     width: 100%;
   display: flex;
-  justify-content: space-between; 
+  justify-content: center; 
+  /* gap: 5vw; */
   align-items: flex-start;       
   margin: 0;
   padding: 0 5vw;               
