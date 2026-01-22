@@ -1,7 +1,5 @@
-initializeNavEvents();
-
 function initializeNavEvents() {
-    const buttons = document.querySelectorAll('.navbar button');
+    const buttons = document.querySelectorAll('.hb-button');
 
     buttons.forEach(button => {
         button.addEventListener('click', toggleMenu);
@@ -9,6 +7,7 @@ function initializeNavEvents() {
 }
 
 function toggleMenu() {
+    console.log("toggled");
     const target = this.getAttribute('data-target');
     const menu = document.getElementById(target);
     const outerMenu = this.closest('.expandable'); 

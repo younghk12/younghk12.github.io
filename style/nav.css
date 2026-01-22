@@ -3,6 +3,7 @@
 .navbar {
     z-index: 10;
     top: 0;
+    align-self: flex-start;
     padding-top: 10vh;
     position: sticky;
     align-items: stretch;
@@ -30,8 +31,13 @@
 
     .logo {
         position: relative;
-        margin-bottom: -11px; 
+        height: auto;
+    }
+    
+    .logo img {
         margin-top: -6px;
+        margin-bottom: -12px;
+        width: 100px;
     }
 
     .hb-button {
@@ -88,11 +94,15 @@
         font-family: "DM Mono", monospace;
         font-size: 1.2rem;
         text-align: right;
-        padding: 1.5rem 0;
-
+        
         &:hover {
             background-color: var(--color-highlight);
         }
+    }
+    
+    .menu-item a {
+        display: block;
+        padding: 1.5rem 0;
     }
     
 }
@@ -102,23 +112,30 @@
 
     .navbar {
         padding: 0;
-        margin-top: 20px;
-        margin-left: 10px;
-        width: auto;
+        padding-top: 20px;
+        padding-left: 10px;
+        width: 100%;
         flex-direction: row;
         justify-content: space-between;
         /* top: 0; */
         /* align-items: stretch; */
         /* box-sizing: border-box; */
         /* position: relative; */
+        
 
         .hb-button {
             display: block;
-            width: 43.5px;
-            height: 100%;
+            /* height: 100%; */
+            width: auto;
             background-color: transparent;
             padding: 0;
             /* border: none; */
+            min-height: 0;
+        }
+
+        .hb-button svg{
+            display: block;
+            height: 40px;
         }
 
         .hb-button .line {
@@ -183,7 +200,7 @@
             border-bottom: 1px solid black;
         }
 
-        .menu-item {
+        .menu-item a {
             padding: 1rem 1rem;
         }
 
