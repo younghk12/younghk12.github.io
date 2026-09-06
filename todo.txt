@@ -1,0 +1,68 @@
+TODO:
+
+    O. CSS
+        O. Switch css to mobile first page to page
+
+        O. Resolve css issues flagged by claude
+
+        O. Resolve css issues like text weights created by claude
+
+        O. Make sure that paths are correct page to page
+
+        O. Use css variables to organize spacing etc
+
+        O. Make px into rem and vw where appropriate
+
+        O. Put max width and height where appropriate to prevent breaking
+
+        O. Fix main page alignment on mobile
+
+    O. HTML
+        O. Are.na, linkedin, instagram, dribble?, codepen?, p5.js, email, 
+
+        O. Figure out best structure for html div vs a tag on works page
+
+    O. JS
+        O. Clean up three.js sketch
+            O. Universal speed for animation
+
+            O. On resize
+
+            O. CSS for mobile
+
+            O. Make sure its interactable on mobile
+
+    O. Nice to haves:
+        O. Convert animations to GSAP
+
+        O. Change Project CSS to have sticky images that demonstrate ideas
+
+        O. Fun GSAP elements on bio and elsewhere that give character
+
+
+    
+
+
+    ?
+
+    O. Full body profile picture with irregular text wrapping
+
+    O. Make h1 and h2 the same css, make h3 into p and make two classes bulleted and unbulleted for unordered lists
+
+    O. Few different types of image galleries, some flex and some w set height/aspect ratio for scrolling like ux
+
+    O. Alignment
+
+
+TODONE:
+
+    X. Nav in separate page
+
+    X. Rewrite Nav
+
+    X. Separate css into separate files
+
+    X. hamburger error messages
+
+    X. Relink files to correct pages
+
