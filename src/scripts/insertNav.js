@@ -6,3 +6,9 @@ fetch('/src/components/nav.html')
     document.querySelector('nav').innerHTML = data;
     initializeNavEvents();
   });
+
+fetch('/src/components/footer.html')
+  .then(res => res.text())
+  .then(data => {
+    document.querySelector('footer').innerHTML = data;
+  });

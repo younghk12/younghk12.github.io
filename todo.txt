@@ -2,12 +2,21 @@ TODO:
 
     O. CSS
         O. Switch css to mobile first page to page
+            O. project.css
+            
+            O. nav.css
+
+            O. works.css
+
+            O. base.css
 
         O. Resolve css issues flagged by claude
 
         O. Resolve css issues like text weights created by claude
 
         O. Make sure that paths are correct page to page
+
+        O. Use correct color css variables throughout
 
         O. Use css variables to organize spacing etc
 
@@ -21,6 +30,8 @@ TODO:
         O. Are.na, linkedin, instagram, dribble?, codepen?, p5.js, email, 
 
         O. Figure out best structure for html div vs a tag on works page
+
+        O. Resolve figma error messages
 
     O. JS
         O. Clean up three.js sketch
@@ -65,4 +76,3 @@ TODONE:
     X. hamburger error messages
 
     X. Relink files to correct pages
-

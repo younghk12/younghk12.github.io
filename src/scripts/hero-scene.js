@@ -1,168 +1,160 @@
 import * as THREE from 'three';
-// import { toonOutlinePass } from 'three/tsl';
 import { MathUtils } from 'three';
-
-
-import Stats from 'three/addons/libs/stats.module.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { FontLoader } from 'three/addons/loaders/FontLoader.js';
-import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
-THREE.ColorManagement.legacyMode = false;
+const container = document.querySelector('.sketch');
 
-let container, stats;
-
-let camera, controls, scene, renderer, postProcessing;
-
-
+// THREE.ColorManagement.legacyMode = false;
 const hsbToRgb = (h, s, b) => {
     const k = (n) => (n + h * 6) % 6;  // h normalized 0–1 → multiply by 6 for sector
     const f = (n) => b * (1 - s * Math.max(0, Math.min(k(n), 4 - k(n), 1)));
     return [f(5), f(3), f(1)];  // RGB in 0–1 range
 };
 
-function init(  ) {
+// SIZES
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+}
 
-    let threeContainer = document.querySelector('.three-container');
-    // container = document.createElement( 'div' );
-    // threeContainer.appendChild( container );
+function resize() {
+    const w = container.clientWidth;
+    const h = container.clientHeight;
 
-    camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 2500 );
-    camera.position.set( 0.0, 300, 500 );
-    
-    scene = new THREE.Scene();
+    if (!w || !h) return;
 
-    renderer = new THREE.WebGLRenderer( { alpha: true } );
-    renderer.setClearColor( 0x000000, 0 );
-    // renderer.outputColorSpace = THREE.SRGBColorSpace;
-    // renderer.outputEncoding = THREE.sRGBEncoding; OLD VERSION
-    renderer.setPixelRatio( window.devicePixelRatio );
-    renderer.setSize( window.innerWidth, window.innerHeight, false  );
-    renderer.setAnimationLoop( animate );
-    threeContainer.appendChild( renderer.domElement );
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h, false);
+}
 
-    
-    const hueSteps = 36, satSteps = 10, briSteps = 10;
-    const cylDiameter = 400, cylHeight = 300;
-    const sphereRadius = 10;
-    const maxR = cylDiameter / 2;
+//  CANVAS
+const canvas = document.querySelector('canvas.webgl');
 
-    const geometry = new THREE.SphereGeometry( sphereRadius, 32, 16 );
-    const material = new THREE.MeshBasicMaterial();
+// SCENE
+const scene = new THREE.Scene;
 
-    
-    let count = 0;
-    for (let a = 0; a < satSteps; a++) {
-        const alpha = a / (satSteps - 1);
-        const numPerRing = alpha === 0 ? 1 : Math.max(1, Math.round(hueSteps * alpha));
-        count += briSteps * numPerRing;
-    }
-    
-    
-    const mesh = new THREE.InstancedMesh(geometry, material, count); 
-    scene.add(mesh);
-    
-    const dummy = new THREE.Object3D();
-    const color = new THREE.Color();
+// OBJECT
+const hueSteps = 36, satSteps = 10, briSteps = 10;
+const cylDiameter = 400, cylHeight = 300;
+const sphereRadius = 10;
+const maxR = cylDiameter / 2;
 
-    let idx = 0;
+const geometry = new THREE.SphereGeometry( sphereRadius, 32, 16 );
+const material = new THREE.MeshBasicMaterial();
 
-    //SATURATION or DISTANCE FROM POLE
-    for (let sIdx = 0; sIdx < satSteps; sIdx++) {
-        const satNorm = sIdx / (satSteps - 1);
-        const satRadius = satNorm * maxR;
-        const numPerRing = satNorm === 0 ? 1 : Math.max(1, Math.round(hueSteps * satNorm));
 
-        //BRIGHTNESS or LEVEL
-        for (let bIdx = 0; bIdx < briSteps; bIdx++) {
-            const briNorm = bIdx / (briSteps - 1);
-            const y = MathUtils.lerp(-cylHeight / 2, cylHeight / 2, briNorm);
+let count = 0;
+for (let a = 0; a < satSteps; a++) {
+    const alpha = a / (satSteps - 1);
+    const numPerRing = alpha === 0 ? 1 : Math.max(1, Math.round(hueSteps * alpha));
+    count += briSteps * numPerRing;
+}
 
-            //HUE or ANGLE
-            for (let h = 0; h < numPerRing; h++) {
-                const hueNorm = h / numPerRing;
-                const angle = hueNorm * (2 * Math.PI);
+const mesh = new THREE.InstancedMesh(geometry, material, count); 
+scene.add(mesh);
 
-                const x = satRadius * Math.cos(angle);
-                const z = satRadius * Math.sin(angle);
+const dummy = new THREE.Object3D();
+const color = new THREE.Color();
 
-                dummy.position.set(x, y, z);
-                dummy.rotation.set(0, 0, 0);
-                dummy.scale.set(1, 1, 1);
-                dummy.updateMatrix();
-                mesh.setMatrixAt(idx, dummy.matrix);
+let idx = 0;
 
-                const [r, g, b] = hsbToRgb(hueNorm, satNorm, briNorm);
+// saturation or distance from pole
+for (let sIdx = 0; sIdx < satSteps; sIdx++) {
+    const satNorm = sIdx / (satSteps - 1);
+    const satRadius = satNorm * maxR;
+    const numPerRing = satNorm === 0 ? 1 : Math.max(1, Math.round(hueSteps * satNorm));
 
-                // color.setRGB(r, g, b, THREE.SRGBColorSpace);
-                color.setRGB(r, g, b).convertSRGBToLinear();
-                // color.setRGB(r, g, b);
-            
-                mesh.setColorAt(idx, color);
+    // brightness or level
+    for (let bIdx = 0; bIdx < briSteps; bIdx++) {
+        const briNorm = bIdx / (briSteps - 1);
+        const y = MathUtils.lerp(-cylHeight / 2, cylHeight / 2, briNorm);
 
-                idx++;
-            }
+        // hue or angle
+        for (let h = 0; h < numPerRing; h++) {
+            const hueNorm = h / numPerRing;
+            const angle = hueNorm * (2 * Math.PI);
+
+            const x = satRadius * Math.cos(angle);
+            const z = satRadius * Math.sin(angle);
+
+            dummy.position.set(x, y, z);
+            dummy.rotation.set(0, 0, 0);
+            dummy.scale.set(1, 1, 1);
+            dummy.updateMatrix();
+            mesh.setMatrixAt(idx, dummy.matrix);
+
+            const [r, g, b] = hsbToRgb(hueNorm, satNorm, briNorm);
+
+            color.setRGB(r, g, b, THREE.SRGBColorSpace);
+            // color.setRGB(r, g, b).convertSRGBToLinear();
+            // color.setRGB(r, g, b);
+        
+            mesh.setColorAt(idx, color);
+
+            idx++;
         }
     }
-
-    // mesh.instanceMatrix.needsUpdate = true;
-    // mesh.instanceColor.needsUpdate = true;
-
-
-    controls = new OrbitControls( camera, renderer.domElement );
-    controls.minDistance = 200;
-    controls.maxDistance = 2000;
-    controls.enablePan = false;
-    controls.enableZoom = false;
-    controls.enableDamping = true; // enable smooth inertia
-    // controls.dampingFactor = 0.05; // lower = more gradual slowdown
-    // controls.rotateSpeed = 0.8;    // optional, adjust rotation speed
-
-    // window.addEventListener( 'resize', onWindowResize );
-
-
-}
-
-init();
-
-
-// function onWindowResize() {
-
-// 	camera.aspect = window.innerWidth / window.innerHeight;
-// 	camera.updateProjectionMatrix();
-
-// 	renderer.setSize( window.innerWidth, window.innerHeight );
-
-// }
-
-function resizeCanvasToDisplaySize() {    // line ~148
-    const canvas = renderer.domElement;
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-    if (canvas.width !== width || canvas.height !== height) {
-        renderer.setSize(width, height, false);   // false keeps CSS scaling intact
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-    }
 }
 
 
-function animate() {
+// CAMERA
+const camera = new THREE.PerspectiveCamera( 40, 1, 1, 2500 );
+camera.position.set( 0.0, 300, 700 );
+
+
+// CONTROLS
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
+controls.enablePan = false;
+controls.enableZoom = false;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 2.0;
+
+
+controls.dampingFactor = 0.01; // lower = more gradual slowdown
+// controls.rotateSpeed = 0.8;    // optional, adjust rotation speed
+
+
+// RENDERER
+const renderer = new THREE.WebGLRenderer( { 
+    canvas: canvas, 
+    alpha: true
+} );
+renderer.setSize( window.innerWidth, window.innerHeight, false  );
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setClearColor( 0x000000, 0 );
+renderer.setAnimationLoop( animate );
+
+new ResizeObserver(resize).observe(container);
+
+let dragging = false;
+controls.addEventListener('start', () => dragging = true);
+controls.addEventListener('end', () => dragging = false);
+
+
+// ANIMATION
+const timer = new THREE.Timer();
+timer.connect(document)
+const spin = { x: 0.2, y: 1 };
+
+function animate(timestamp) {
+
+    timer.update(timestamp);
+    const delta = timer.getDelta();
+    // const elapsed = timer.getElapsed();
 
     controls.update();
 
-    resizeCanvasToDisplaySize();
+    if(!dragging){
+        // scene.rotation.x = elapsed * spin.x;
+        // scene.rotation.y = elapsed * spin.y;
+        mesh.rotation.x += delta * spin.x;
+        // mesh.rotation.y += delta * spin.y;
 
-    scene.rotation.y += 0.005;
-
-    render();
-}
-
-function render() {
-
-    const timer = Date.now() * 0.00025;
+    }
 
     renderer.render( scene, camera );
-
 }
+
 
