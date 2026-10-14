@@ -6,7 +6,6 @@
         padding-top: 10vh;
         min-width: 0;
         max-width: 1250px;
-        /* overflow: hidden; */
     }
     
     .link {
@@ -19,15 +18,7 @@
         }
     }
     
-    .right{
-            text-align: right;
-            justify-content: flex-end;
-            flex-direction: row-reverse;
-        }
     
-    .right * {
-        flex-direction: row-reverse;
-    }
     
     .pills {
         display: flex;
@@ -147,6 +138,8 @@
         text-decoration: underline;
         background-color: black;
     }
+
+
     
     @media (min-width: 1001px){
     
@@ -167,7 +160,8 @@
             position: static;
             scroll-snap-align: none;
         }
-    
+
+        
         .projectCard {
             height: 75vh;
             width: 100%;
@@ -177,7 +171,19 @@
             scroll-snap-type: none;
             overflow: visible;
         }
-    
+
+        .projectCard:nth-child(even of .projectCard) {
+            text-align: right;
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+
+            .pills {
+                flex-direction: row-reverse;
+            }
+
+        }
+        
+        
         .projectCard .image-container{
             width: auto;
             height: auto;
