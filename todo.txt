@@ -1,5 +1,7 @@
 TODO:
 
+    need to figure out footers in each of the project pages
+
     O. CSS
         O. Switch css to mobile first page to page
             O. project.css
